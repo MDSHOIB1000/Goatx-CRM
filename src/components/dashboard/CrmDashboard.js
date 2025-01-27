@@ -1,11 +1,11 @@
 import React from 'react'
 
 function CrmDashboard() {
-  return (
-    <div>
-      
-    </div>
-  )
+    return (
+        <div>
+            Dashboard
+        </div>
+    )
 }
 
 export default CrmDashboard
