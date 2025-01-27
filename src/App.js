@@ -1,6 +1,9 @@
 import { Route, Routes, Navigate } from "react-router-dom";
 import Navigation from "./commonComponents/header/navigation/Navigation";
 import Dashboard from "./Pages/dashboard/index"
+import Quary from "./Pages/quary";
+import AddQuary from "./Pages/addQuary";
+
 
 function App() {
   return (
@@ -10,6 +13,8 @@ function App() {
       <Routes>
         <Route path="/" element={<Navigate to="dashboard" replace />} />
         <Route path="dashboard" element={<Dashboard />} />
+        <Route path={`quary`} element={<Quary />} />
+        <Route path={`add-quary`} element={<AddQuary  />} />
       </Routes>
 
     </>
