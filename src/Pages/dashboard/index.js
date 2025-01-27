@@ -1,11 +1,11 @@
 import React from 'react'
-
-function index() {
-  return (
-    <div>
-      
-    </div>
-  )
+import CrmDashboard from '../../components/dashboard/CrmDashboard'
+function Dashboard() {
+    return (
+        <>
+            <CrmDashboard />
+        </>
+    )
 }
 
-export default index
+export default Dashboard
