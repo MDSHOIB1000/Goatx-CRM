@@ -1,11 +1,12 @@
 import { Route, Routes } from "react-router-dom";
+import Dashboard from "./Pages/dashboard";
 
 
 function App() {
   return (
     <>
       <Routes>
-      <Route path={`dashboard`} element={<DasBoardRight />} />
+        <Route path={`dashboard`} element={<Dashboard />} />
       </Routes>
     </>
   );
