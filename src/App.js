@@ -3,6 +3,8 @@ import Navigation from "./commonComponents/header/navigation/Navigation";
 import Dashboard from "./Pages/dashboard/index"
 import Quary from "./Pages/quary";
 import AddQuary from "./Pages/addQuary";
+import DailyDutySheet from "./Pages/operations/dailyDutySheet";
+import HotelReservation from "./Pages/operations/hotelReservation";
 
 
 function App() {
@@ -15,6 +17,8 @@ function App() {
         <Route path="dashboard" element={<Dashboard />} />
         <Route path={`travel/query`} element={<Quary />} />
         <Route path={`travel/create-quary`} element={<AddQuary  />} />
+        <Route path={`daily-duty`} element={<DailyDutySheet />} />
+        <Route path={`hotel-reservation`} element={<HotelReservation />} />
       </Routes>
 
     </>
