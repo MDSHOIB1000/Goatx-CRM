@@ -1,25 +1,32 @@
 import React, { useState } from "react";
 import "react-quill/dist/quill.snow.css"; // Import the styles
 import ReactQuill from "react-quill";
+import AddNewAgent from "../addNewAgent/AddNewAgent";
 
 const AddQuaryInformation = () => {
-  const [openDropdown, setOpenDropdown] = useState(null); // State for open dropdown
+  const [openDropdown, setOpenDropdown] = useState(null); 
+  const [isOpen, setIsOpen] = useState(false); 
+  const [value, setValue] = useState(false); 
 
   const toggleDropdown = (dropdownId) => {
     setOpenDropdown((prev) => (prev === dropdownId ? null : dropdownId));
   };
 
-  const [value, setValue] = useState("");
+    //poppup open & close
+    const togglePopup = () => {
+      setIsOpen(!isOpen);
+    };
+
 
   const modules = {
     toolbar: [
       [{ font: [] }],
       [{ header: [1, 2, 3, false] }],
-      ["bold", "italic", "underline", "strike"], // Text styles
-      [{ list: "ordered" }, { list: "bullet" }], // Lists
+      ["bold", "italic", "underline", "strike"], 
+      [{ list: "ordered" }, { list: "bullet" }], 
       [{ align: [] }],
-      ["link", "image", "video"], // Media
-      ["clean"], // Clear formatting
+      ["link", "image", "video"],
+      ["clean"], 
     ],
   };
 
@@ -474,6 +481,8 @@ const AddQuaryInformation = () => {
           Search
         </button>
       </div>
+     
+          <AddNewAgent isOpen={isOpen} togglePopup={togglePopup} />
     </div>
   );
 };
