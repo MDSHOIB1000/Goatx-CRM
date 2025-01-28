@@ -13,8 +13,8 @@ function App() {
       <Routes>
         <Route path="/" element={<Navigate to="dashboard" replace />} />
         <Route path="dashboard" element={<Dashboard />} />
-        <Route path={`quary`} element={<Quary />} />
-        <Route path={`add-quary`} element={<AddQuary  />} />
+        <Route path={`travel/query`} element={<Quary />} />
+        <Route path={`travel/create-quary`} element={<AddQuary  />} />
       </Routes>
 
     </>

@@ -4,7 +4,7 @@ const QuaryTable = () => {
   return (
     <div className="overflow-x-auto mt-4">
       <table className="min-w-full table-auto border-collapse text-sm border border-gray-300">
-        <thead className="bg-blue-600 text-white">
+        <thead className="bg-headerBg text-white">
           <tr>
             <th className="px-4 py-2 border border-gray-300">
               <input className="form-check-input" type="checkbox" value="" />

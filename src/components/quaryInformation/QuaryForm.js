@@ -2,7 +2,7 @@ import React from "react";
 
 const QuaryForm = () => {
   return (
-    <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-4 mt-4">
+    <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-6 gap-4 mt-4">
       <div className="flex flex-col">
         <label htmlFor="start-date" className="text-sm font-medium mb-1">
           Start Date
@@ -10,7 +10,7 @@ const QuaryForm = () => {
         <input
           type="date"
           id="start-date"
-          className="p-2 border rounded-md"
+          className="px-3 py-2 border border-gray-300 rounded-md focus:outline-none focus:ring-2 focus:ring-blue-500 focus:border-blue-500"
         />
       </div>
 
@@ -21,7 +21,7 @@ const QuaryForm = () => {
         <input
           type="date"
           id="end-date"
-          className="p-2 border rounded-md"
+          className="px-3 py-2 border border-gray-300 rounded-md focus:outline-none focus:ring-2 focus:ring-blue-500 focus:border-blue-500"
         />
       </div>
 
@@ -33,7 +33,7 @@ const QuaryForm = () => {
           type="text"
           id="query-id"
           placeholder="Search Query ID"
-          className="p-2 border rounded-md"
+          className="px-3 py-2 border border-gray-300 rounded-md focus:outline-none focus:ring-2 focus:ring-blue-500 focus:border-blue-500"
         />
       </div>
 
@@ -45,7 +45,7 @@ const QuaryForm = () => {
           type="text"
           id="quotationry-id"
           placeholder="Search Quotationry ID"
-          className="p-2 border rounded-md"
+          className="px-3 py-2 border border-gray-300 rounded-md focus:outline-none focus:ring-2 focus:ring-blue-500 focus:border-blue-500"
         />
       </div>
 
@@ -55,7 +55,7 @@ const QuaryForm = () => {
         </label>
         <select
           id="lead-source"
-          className="p-2 border rounded-md bg-white"
+          className="px-3 py-2 border border-gray-300 rounded-md focus:outline-none focus:ring-2 focus:ring-blue-500 focus:border-blue-500"
         >
           <option value="" selected disabled>
             Open this select menu
@@ -71,7 +71,7 @@ const QuaryForm = () => {
         </label>
         <select
           id="agent-type"
-          className="p-2 border rounded-md bg-white"
+          className="px-3 py-2 border border-gray-300 rounded-md focus:outline-none focus:ring-2 focus:ring-blue-500 focus:border-blue-500"
         >
           <option value="" selected disabled>
             Open this select menu
@@ -87,7 +87,7 @@ const QuaryForm = () => {
         </label>
         <select
           id="all-company"
-          className="p-2 border rounded-md bg-white"
+          className="px-3 py-2 border border-gray-300 rounded-md focus:outline-none focus:ring-2 focus:ring-blue-500 focus:border-blue-500"
         >
           <option value="" selected disabled>
             Open this select menu
@@ -105,7 +105,7 @@ const QuaryForm = () => {
           type="text"
           id="subject-company"
           placeholder="Transfer"
-          className="p-2 border rounded-md"
+          className="px-3 py-2 border border-gray-300 rounded-md focus:outline-none focus:ring-2 focus:ring-blue-500 focus:border-blue-500"
         />
       </div>
 
@@ -115,7 +115,7 @@ const QuaryForm = () => {
         </label>
         <select
           id="all-status"
-          className="p-2 border rounded-md bg-white"
+          className="px-3 py-2 border border-gray-300 rounded-md focus:outline-none focus:ring-2 focus:ring-blue-500 focus:border-blue-500"
         >
           <option value="" selected disabled>
             Open this select menu
@@ -131,7 +131,7 @@ const QuaryForm = () => {
         </label>
         <select
           id="select-ops"
-          className="p-2 border rounded-md bg-white"
+          className="px-3 py-2 border border-gray-300 rounded-md focus:outline-none focus:ring-2 focus:ring-blue-500 focus:border-blue-500"
         >
           <option value="" selected disabled>
             Open this select menu
@@ -147,7 +147,7 @@ const QuaryForm = () => {
         </label>
         <select
           id="all-sales"
-          className="p-2 border rounded-md bg-white"
+          className="px-3 py-2 border border-gray-300 rounded-md focus:outline-none focus:ring-2 focus:ring-blue-500 focus:border-blue-500"
         >
           <option value="" selected disabled>
             Open this select menu
@@ -157,7 +157,7 @@ const QuaryForm = () => {
         </select>
       </div>
 
-      <div className="col-span-1 md:col-span-2 lg:col-span-4 flex justify-center items-center gap-4 mt-4">
+      <div className="flex flex-col mt-6">
         <button
           type="button"
           className="py-2 px-8 bg-green-700 text-white rounded-md hover:bg-green-800"

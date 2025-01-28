@@ -3,7 +3,7 @@ import AddQuaryInformation from '../../components/addQuaryInformation/AddQuaryIn
 
 const AddQuary = () => {
   return (
-    <div><AddQuaryInformation /></div>
+    <><AddQuaryInformation /></>
   )
 }
 
