@@ -1,25 +1,32 @@
 import React, { useState } from "react";
 import "react-quill/dist/quill.snow.css"; // Import the styles
 import ReactQuill from "react-quill";
+import AddNewAgent from "../addNewAgent/AddNewAgent";
 
 const AddQuaryInformation = () => {
     const [openDropdown, setOpenDropdown] = useState(null); // State for open dropdown
+    const [isOpen, setIsOpen] = useState(false); //poppup state
+    const [value, setValue] = useState("");
   
     const toggleDropdown = (dropdownId) => {
       setOpenDropdown((prev) => (prev === dropdownId ? null : dropdownId));
     };
 
-  const [value, setValue] = useState("");
+    //poppup open & close
+    const togglePopup = () => {
+      setIsOpen(!isOpen);
+    };
+
 
   const modules = {
     toolbar: [
       [{ font: [] }],
       [{ header: [1, 2, 3, false] }],
-      ["bold", "italic", "underline", "strike"], // Text styles
-      [{ list: "ordered" }, { list: "bullet" }], // Lists
+      ["bold", "italic", "underline", "strike"], 
+      [{ list: "ordered" }, { list: "bullet" }], 
       [{ align: [] }],
-      ["link", "image", "video"], // Media
-      ["clean"], // Clear formatting
+      ["link", "image", "video"],
+      ["clean"], 
     ],
   };
 
@@ -44,7 +51,7 @@ const AddQuaryInformation = () => {
         {/* Query Information */}
         <div>
           <h2 className="text-lg font-semibold mb-4">Query Information</h2>
-          <button className="bg-gradient-to-r from-sky-400 to-blue-800 text-white font-bold w-full py-1 ">
+          <button  onClick={togglePopup} className="bg-gradient-to-r from-sky-400 to-blue-800 text-white font-bold w-full py-1 ">
             Add New Agent/Client
           </button>
           <div className="grid grid-cols-1 md:grid-cols-2 gap-4 pt-4">
@@ -53,7 +60,7 @@ const AddQuaryInformation = () => {
                 Agent/B2C
               </label>
               <select
-                id="lead-source"
+                id=""
                 className="p-2 border rounded-md bg-white"
               >
                 <option value="" selected disabled>
@@ -460,6 +467,8 @@ const AddQuaryInformation = () => {
           Search
         </button>
       </div>
+     
+          <AddNewAgent isOpen={isOpen} togglePopup={togglePopup} />
     </div>
   );
 };
