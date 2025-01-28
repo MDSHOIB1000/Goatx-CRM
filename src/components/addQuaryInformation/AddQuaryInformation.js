@@ -1,25 +1,32 @@
 import React, { useState } from "react";
 import "react-quill/dist/quill.snow.css"; // Import the styles
 import ReactQuill from "react-quill";
+import AddNewAgent from "../addNewAgent/AddNewAgent";
 
 const AddQuaryInformation = () => {
-    const [openDropdown, setOpenDropdown] = useState(null); // State for open dropdown
-  
-    const toggleDropdown = (dropdownId) => {
-      setOpenDropdown((prev) => (prev === dropdownId ? null : dropdownId));
+  const [openDropdown, setOpenDropdown] = useState(null); 
+  const [isOpen, setIsOpen] = useState(false); 
+  const [value, setValue] = useState(false); 
+
+  const toggleDropdown = (dropdownId) => {
+    setOpenDropdown((prev) => (prev === dropdownId ? null : dropdownId));
+  };
+
+    //poppup open & close
+    const togglePopup = () => {
+      setIsOpen(!isOpen);
     };
 
-  const [value, setValue] = useState("");
 
   const modules = {
     toolbar: [
       [{ font: [] }],
       [{ header: [1, 2, 3, false] }],
-      ["bold", "italic", "underline", "strike"], // Text styles
-      [{ list: "ordered" }, { list: "bullet" }], // Lists
+      ["bold", "italic", "underline", "strike"], 
+      [{ list: "ordered" }, { list: "bullet" }], 
       [{ align: [] }],
-      ["link", "image", "video"], // Media
-      ["clean"], // Clear formatting
+      ["link", "image", "video"],
+      ["clean"], 
     ],
   };
 
@@ -39,22 +46,26 @@ const AddQuaryInformation = () => {
   ];
 
   return (
-    <div className="border p-4 m-2 shadow-sm rounded-md">
+    <div className="border p-4 m-2 shadow-md rounded-sm">
       <div className="grid grid-cols-1 lg:grid-cols-2 gap-8">
-        {/* Query Information */}
         <div>
-          <h2 className="text-lg font-semibold mb-4">Query Information</h2>
-          <button className="bg-gradient-to-r from-sky-400 to-blue-800 text-white font-bold w-full py-1 ">
-            Add New Agent/Client
-          </button>
-          <div className="grid grid-cols-1 md:grid-cols-2 gap-4 pt-4">
+
+          <div className="flex  bg-headerBg text-white align-middle justify-between rounded-md p-2">
+
+            <h2 className="text-lg font-semibold">Query Information</h2>
+            <button className="bg-blue-500 hover:bg-blue-700 text-white font-bold py-2 px-4 rounded-full uppercase">
+              Add New Agent/Client
+            </button>
+          </div>
+          <div className="grid grid-cols-1 md:grid-cols-2 gap-4 pt-4 border p-5 rounded-md my-3 shadow-2xl ">
+
             <div className="flex flex-col">
               <label htmlFor="lead-source" className="text-sm font-medium mb-1">
                 Agent/B2C
               </label>
               <select
                 id="lead-source"
-                className="p-2 border rounded-md bg-white"
+                className="px-3 py-2 border border-gray-300 rounded-md focus:outline-none focus:ring-2 focus:ring-blue-500 focus:border-blue-500"
               >
                 <option value="" selected disabled>
                   Open this select menu
@@ -66,12 +77,12 @@ const AddQuaryInformation = () => {
 
             <div className="flex flex-col">
               <label htmlFor="start-date" className="text-sm font-medium mb-1">
-              Agent
+                Agent
               </label>
               <div className="relative">
-              <button
+                <button
                   onClick={() => toggleDropdown("Agent")}
-                  className="w-full bg-white border border-gray-300 rounded-md p-2 text-left focus:outline-none"
+                  className="w-full bg-white px-3 py-2 border border-gray-300 rounded-md focus:outline-none focus:ring-2 focus:ring-blue-500 focus:border-blue-500"
                 >
                   <span className="float-right">▾</span>
                 </button>
@@ -80,7 +91,7 @@ const AddQuaryInformation = () => {
                     <input
                       type="text"
                       placeholder="Search..."
-                      className="w-full p-2 border-b border-gray-200 focus:outline-none"
+                      className="w-full px-3 py-2 border-b border-gray-200 focus:outline-none"
                     />
                     <ul className="max-h-40 overflow-y-auto">
                       <li className="p-2 hover:bg-gray-100 cursor-pointer">select Agent</li>
@@ -95,9 +106,9 @@ const AddQuaryInformation = () => {
                 Contact Person Name
               </label>
               <div className="relative">
-              <button
+                <button
                   onClick={() => toggleDropdown("ContactPerson")}
-                  className="w-full bg-white border border-gray-300 rounded-md p-2 text-left focus:outline-none"
+                  className="w-full bg-white  px-3 py-2 border border-gray-300 rounded-md focus:outline-none focus:ring-2 focus:ring-blue-500 focus:border-blue-500"
                 >
                   <span className="float-right">▾</span>
                 </button>
@@ -106,7 +117,7 @@ const AddQuaryInformation = () => {
                     <input
                       type="text"
                       placeholder="Search..."
-                      className="w-full p-2 border-b border-gray-200 focus:outline-none"
+                      className="w-full px-3 py-2 border-b border-gray-200 focus:outline-none"
                     />
                     <ul className="max-h-40 overflow-y-auto">
                       <li className="p-2 hover:bg-gray-100 cursor-pointer">select Agent</li>
@@ -124,7 +135,7 @@ const AddQuaryInformation = () => {
                 type="email"
                 placeholder="Enter Email"
                 id=""
-                className="p-2 border rounded-md"
+                className="px-3 py-2 border border-gray-300 rounded-md focus:outline-none focus:ring-2 focus:ring-blue-500 focus:border-blue-500"
               />
             </div>
 
@@ -136,20 +147,25 @@ const AddQuaryInformation = () => {
                 type="number"
                 placeholder="Enter Number"
                 id=""
-                className="p-2 border rounded-md"
+                className="px-3 py-2 border border-gray-300 rounded-md focus:outline-none focus:ring-2 focus:ring-blue-500 focus:border-blue-500"
               />
             </div>
 
             <div className="flex flex-col">
-              <label htmlFor="query-id" className="text-sm font-medium mb-1">
-                Mobile Number
-              </label>
-              <input
-                type="number"
-                id=""
-                placeholder="Mobile Number"
-                className="p-2 border rounded-md"
-              />
+              <div className="flex flex-col space-y-2">
+                <label
+                  htmlFor="mobile-number"
+                  className="text-sm font-medium text-gray-700"
+                >
+                  Mobile Number
+                </label>
+                <input
+                  type="number"
+                  id="mobile-number"
+                  placeholder="Enter your mobile number"
+                  className="px-3 py-2 border border-gray-300 rounded-md focus:outline-none focus:ring-2 focus:ring-blue-500 focus:border-blue-500"
+                />
+              </div>
             </div>
 
             <div className="flex flex-col">
@@ -163,7 +179,7 @@ const AddQuaryInformation = () => {
                 type="text"
                 id="quotationry-id"
                 placeholder="Enter Guest Name"
-                className="p-2 border rounded-md"
+                className="px-3 py-2 border border-gray-300 rounded-md focus:outline-none focus:ring-2 focus:ring-blue-500 focus:border-blue-500"
               />
             </div>
 
@@ -172,9 +188,9 @@ const AddQuaryInformation = () => {
                 Service Type
               </label>
               <div className="relative">
-              <button
+                <button
                   onClick={() => toggleDropdown("ServiceType")}
-                  className="w-full bg-white border border-gray-300 rounded-md p-2 text-left focus:outline-none"
+                  className="w-full bg-white  px-3 py-2 border border-gray-300 rounded-md focus:outline-none focus:ring-2 focus:ring-blue-500 focus:border-blue-500"
                 >
                   <span className="float-right">▾</span>
                 </button>
@@ -183,7 +199,7 @@ const AddQuaryInformation = () => {
                     <input
                       type="text"
                       placeholder="Search..."
-                      className="w-full p-2 border-b border-gray-200 focus:outline-none"
+                      className="w-full px-3 py-2 border-b border-gray-200 focus:outline-none"
                     />
                     <ul className="max-h-40 overflow-y-auto">
                       <li className="p-2 hover:bg-gray-100 cursor-pointer">select Agent</li>
@@ -204,7 +220,7 @@ const AddQuaryInformation = () => {
                 type="text"
                 id=""
                 placeholder="Enter Query Title"
-                className="p-2 border rounded-md"
+                className="px-3 py-2 border border-gray-300 rounded-md focus:outline-none focus:ring-2 focus:ring-blue-500 focus:border-blue-500"
               />
             </div>
 
@@ -219,39 +235,44 @@ const AddQuaryInformation = () => {
                 type="text"
                 id=""
                 placeholder="Enter Query Title"
-                className="p-2 border rounded-md"
+                className="px-3 py-2 border border-gray-300 rounded-md focus:outline-none focus:ring-2 focus:ring-blue-500 focus:border-blue-500"
               />
             </div>
 
-            <div className="flex gap-2">
-              <input
-                type="checkbox"
-                id=""
-                placeholder="Enter Query Title"
-                className="p-2 border rounded-md"
-              />
-              <label
-                htmlFor="quotationry-id"
-                className="text-sm font-medium mb-1"
-              >
-                Send Acknowledgement Mail
-              </label>
-            </div>
+
           </div>
+          <div className="flex gap-2">
+            <input
+              type="checkbox"
+              id=""
+              placeholder="Enter Query Title"
+              className="w-5 h-5 px-3 py-2 border border-gray-300 rounded-md focus:outline-none focus:ring-2 focus:ring-blue-500 focus:border-blue-500"
+            />
+
+            <label
+              htmlFor="quotationry-id"
+              className="text-sm font-medium mb-1"
+            >
+              Send Acknowledgement Mail
+            </label>
+          </div>
+
         </div>
 
         {/* Other Information */}
         <div>
-          <h2 className="text-lg font-semibold mb-4">Other Information</h2>
-          <div className="grid grid-cols-1 md:grid-cols-2 gap-4">
+          <div className=" bg-headerBg text-white align-middle justify-between rounded-md p-2">
+            <h2 className="text-lg font-semibold mb-4">Other Information</h2>
+          </div>
+          <div className="grid grid-cols-1 md:grid-cols-2 gap-4 pt-4 border p-5 rounded-md my-3 shadow-2xl ">
             <div className="flex flex-col">
               <label htmlFor="start-date" className="text-sm font-medium mb-1">
                 Destination
               </label>
               <div className="relative">
-              <button
+                <button
                   onClick={() => toggleDropdown("Destination")}
-                  className="w-full bg-white border border-gray-300 rounded-md p-2 text-left focus:outline-none"
+                  className="w-full bg-white px-3 py-2 border border-gray-300 rounded-md focus:outline-none focus:ring-2 focus:ring-blue-500 focus:border-blue-500"
                 >
                   <span className="float-right">▾</span>
                 </button>
@@ -260,7 +281,7 @@ const AddQuaryInformation = () => {
                     <input
                       type="text"
                       placeholder="Search..."
-                      className="w-full p-2 border-b border-gray-200 focus:outline-none"
+                      className="w-full px-3 py-2 border-b border-gray-200 focus:outline-none"
                     />
                     <ul className="max-h-40 overflow-y-auto">
                       <li className="p-2 hover:bg-gray-100 cursor-pointer">select Agent</li>
@@ -277,7 +298,7 @@ const AddQuaryInformation = () => {
               >
                 From Date
               </label>
-              <input type="date" id="" className="p-2 border rounded-md" />
+              <input type="date" id="" className="px-3 py-2 border border-gray-300 rounded-md focus:outline-none focus:ring-2 focus:ring-blue-500 focus:border-blue-500" />
             </div>
 
             <div className="flex flex-col">
@@ -287,7 +308,7 @@ const AddQuaryInformation = () => {
               >
                 To Date
               </label>
-              <input type="date" id="" className="p-2 border rounded-md" />
+              <input type="date" id="" className="px-3 py-2 border border-gray-300 rounded-md focus:outline-none focus:ring-2 focus:ring-blue-500 focus:border-blue-500" />
             </div>
 
             <div className="flex flex-col">
@@ -301,7 +322,7 @@ const AddQuaryInformation = () => {
                 type="text"
                 id="subject-company"
                 placeholder="Enter No. of Adult"
-                className="p-2 border rounded-md"
+                className="px-3 py-2 border border-gray-300 rounded-md focus:outline-none focus:ring-2 focus:ring-blue-500 focus:border-blue-500"
               />
             </div>
 
@@ -316,7 +337,7 @@ const AddQuaryInformation = () => {
                 type="Number"
                 id=""
                 placeholder="Enter No. Of Child"
-                className="p-2 border rounded-md"
+                className="px-3 py-2 border border-gray-300 rounded-md focus:outline-none focus:ring-2 focus:ring-blue-500 focus:border-blue-500"
               />
             </div>
 
@@ -331,7 +352,7 @@ const AddQuaryInformation = () => {
                 type="number"
                 id="subject-company"
                 placeholder="Enter No. Of Infant"
-                className="p-2 border rounded-md"
+                className="px-3 py-2 border border-gray-300 rounded-md focus:outline-none focus:ring-2 focus:ring-blue-500 focus:border-blue-500"
               />
             </div>
 
@@ -340,9 +361,9 @@ const AddQuaryInformation = () => {
                 Lead Source
               </label>
               <div className="relative">
-              <button
+                <button
                   onClick={() => toggleDropdown("LeadSource")}
-                  className="w-full bg-white border border-gray-300 rounded-md p-2 text-left focus:outline-none"
+                  className="w-full bg-white px-3 py-2 border border-gray-300 rounded-md focus:outline-none focus:ring-2 focus:ring-blue-500 focus:border-blue-500"
                 >
                   <span className="float-right">▾</span>
                 </button>
@@ -351,7 +372,7 @@ const AddQuaryInformation = () => {
                     <input
                       type="text"
                       placeholder="Search..."
-                      className="w-full p-2 border-b border-gray-200 focus:outline-none"
+                      className="w-full px-3 py-2 border-b border-gray-200 focus:outline-none"
                     />
                     <ul className="max-h-40 overflow-y-auto">
                       <li className="p-2 hover:bg-gray-100 cursor-pointer">select Agent</li>
@@ -366,9 +387,9 @@ const AddQuaryInformation = () => {
                 Operation Person *
               </label>
               <div className="relative">
-              <button
+                <button
                   onClick={() => toggleDropdown("Operation")}
-                  className="w-full bg-white border border-gray-300 rounded-md p-2 text-left focus:outline-none"
+                  className="w-full bg-white px-3 py-2 border border-gray-300 rounded-md focus:outline-none focus:ring-2 focus:ring-blue-500 focus:border-blue-500"
                 >
                   <span className="float-right">▾</span>
                 </button>
@@ -377,7 +398,7 @@ const AddQuaryInformation = () => {
                     <input
                       type="text"
                       placeholder="Search..."
-                      className="w-full p-2 border-b border-gray-200 focus:outline-none"
+                      className="w-full px-3 py-2 border-b border-gray-200 focus:outline-none"
                     />
                     <ul className="max-h-40 overflow-y-auto">
                       <li className="p-2 hover:bg-gray-100 cursor-pointer">select Agent</li>
@@ -392,9 +413,9 @@ const AddQuaryInformation = () => {
                 Sales Person *
               </label>
               <div className="relative">
-              <button
+                <button
                   onClick={() => toggleDropdown("SalesPerson")}
-                  className="w-full bg-white border border-gray-300 rounded-md p-2 text-left focus:outline-none"
+                  className="w-full bg-white px-3 py-2 border border-gray-300 rounded-md focus:outline-none focus:ring-2 focus:ring-blue-500 focus:border-blue-500"
                 >
                   <span className="float-right">▾</span>
                 </button>
@@ -403,7 +424,7 @@ const AddQuaryInformation = () => {
                     <input
                       type="text"
                       placeholder="Search..."
-                      className="w-full p-2 border-b border-gray-200 focus:outline-none"
+                      className="w-full px-3 py-2 border-b border-gray-200 focus:outline-none"
                     />
                     <ul className="max-h-40 overflow-y-auto">
                       <li className="p-2 hover:bg-gray-100 cursor-pointer">select Agent</li>
@@ -419,7 +440,7 @@ const AddQuaryInformation = () => {
               </label>
               <select
                 id="all-company"
-                className="p-2 border rounded-md bg-white"
+                className="px-3 py-2 border border-gray-300 rounded-md focus:outline-none focus:ring-2 focus:ring-blue-500 focus:border-blue-500"
               >
                 <option value="" selected disabled>
                   Open this select menu
@@ -446,8 +467,8 @@ const AddQuaryInformation = () => {
       </div>
 
       {/* Submit Button */}
-      <div className="flex justify-center gap-5 mt-6">
-      <button
+      <div className="flex justify-end gap-5 mt-6">
+        <button
           type="button"
           className="py-2 px-8 bg-red-700 text-white rounded-md hover:bg-red-800"
         >
@@ -460,6 +481,8 @@ const AddQuaryInformation = () => {
           Search
         </button>
       </div>
+     
+          <AddNewAgent isOpen={isOpen} togglePopup={togglePopup} />
     </div>
   );
 };
