@@ -1,3 +1,6 @@
+import { faCalendarCheck, faClock, faEdit, faEnvelope, faSquare, faStar } from "@fortawesome/free-regular-svg-icons";
+import { faBox, faCircleRadiation, faFilter, faLocationDot, faMobile, faPerson, faPhone, faUser } from "@fortawesome/free-solid-svg-icons";
+import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import React from "react";
 
 const QuaryTable = () => {
@@ -31,7 +34,7 @@ const QuaryTable = () => {
               </div>
               <div className="flex flex-col">
                 <span className="bg-green-500 text-white px-2 py-1 rounded-md">
-                  <i className="fa-solid fa-star"></i> Viaggio World Pvt Ltd
+                  <FontAwesomeIcon icon={faStar} />  Viaggio World Pvt Ltd
                 </span>
               </div>
             </td>
@@ -42,25 +45,28 @@ const QuaryTable = () => {
                   <i className="fa-solid fa-calendar-days"></i> Travel Date: 15 Feb - 20 Feb 2025
                 </span>
                 <span>
-                  <i className="fa-solid fa-clock"></i> Duration: 6 Days
+                  <FontAwesomeIcon icon={faClock} />
+                  Duration: 6 Days
                 </span>
                 <span>
-                  <i className="fa-solid fa-person"></i> Adults: 3 |{" "}
-                  <i className="fa-solid fa-person"></i> Childs: 0 |{" "}
-                  <i className="fa-solid fa-person"></i> Infants: 0
+                  <FontAwesomeIcon icon={faPerson} /> Adults: 3 |{" "}
+                  <FontAwesomeIcon icon={faPerson} /> Childs: 0 |{" "}
+                  <FontAwesomeIcon icon={faPerson} /> Infants: 0
                 </span>
               </div>
             </td>
             <td className="px-4 py-2 border border-gray-300 whitespace-nowrap">
               <div className="flex flex-col">
                 <span>
-                  <i className="fa-solid fa-location-dot"></i> Pattaya, Bangkok
+                  <FontAwesomeIcon icon={faLocationDot} /> Pattaya, Bangkok
                 </span>
                 <span>
-                  <i className="fa-solid fa-box"></i> Complete Package
+                  <FontAwesomeIcon icon={faBox} />
+                  Complete Package
                 </span>
                 <span>
-                  <i className="fa-solid fa-filter"></i> Lead Source: Call
+                  <FontAwesomeIcon icon={faFilter} />
+                  Lead Source: Call
                 </span>
               </div>
             </td>
@@ -68,33 +74,26 @@ const QuaryTable = () => {
               <div className="flex flex-col">
                 <strong>Manish Srivastava</strong>
                 <span>
-                  <i className="fa-solid fa-user"></i> Manish Srivantava
+                  <span><FontAwesomeIcon icon={faUser} /></span> <span>Manish Srivantava</span>
                 </span>
                 <span>
-                  <i className="fa-solid fa-envelope"></i> Email:
+                  <span><FontAwesomeIcon icon={faEnvelope} /></span> <span>Email:</span>
                 </span>
                 <span>
-                  <i className="fa-solid fa-mobile"></i> Mobile No.: 7860601111
+                  <span>Mobile No.: 7860601111</span>
                 </span>
                 <span>
-                  <i className="fa-solid fa-phone"></i> Landline No.: 7860601111
+                  <span><FontAwesomeIcon icon={faPhone} /></span> Landline No.: 7860601111
                 </span>
               </div>
             </td>
             <td className="px-4 py-2 border border-gray-300 whitespace-nowrap">
               <div className="flex flex-col">
-                <span>
-                  <i className="fa-solid fa-calendar-days"></i> Date: 24 Jan 2025
-                </span>
-                <span>
-                  <i className="fa-solid fa-clock"></i> Time: 18:01 pm
-                </span>
-                <span>
-                  <i className="fa-solid fa-user"></i> Added By: Sarthak Singh
-                </span>
-                <span>
-                  <i className="fa-solid fa-clock"></i> Last Updated: 25 Jan 2025 14:30 pm
-                </span>
+
+                <span><FontAwesomeIcon icon={faCalendarCheck} /> Date: 24 Jan 2025</span>
+                <span><FontAwesomeIcon icon={faClock} />Time: 18:01 pm</span>
+                <span> <FontAwesomeIcon icon={faUser} /> Added By: Sarthak Singh</span>
+                <span> <FontAwesomeIcon icon={faClock} /> Last Updated: 25 Jan 2025 14:30 pm</span>
               </div>
             </td>
             <td className="px-4 py-2 border border-gray-300 whitespace-nowrap">
@@ -123,7 +122,7 @@ const QuaryTable = () => {
             </td>
             <td className="px-4 py-2 border border-gray-300">
               <button className="text-blue-500 hover:text-blue-700">
-                <i className="fa-regular fa-pen-to-square"></i>
+                <FontAwesomeIcon icon={faEdit} />
               </button>
             </td>
           </tr>
