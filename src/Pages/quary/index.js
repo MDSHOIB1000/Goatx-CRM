@@ -3,7 +3,7 @@ import QuaryInformation from '../../components/quaryInformation/QuaryInformation
 
 const Quary = () => {
   return (
-    <div><QuaryInformation /></div>
+    <><QuaryInformation /></>
   )
 }
 
