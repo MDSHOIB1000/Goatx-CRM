@@ -5,6 +5,7 @@ import QuaryCard from "./QuaryCard";
 import QuaryTable from "./QuaryTable";
 
 import QueryFormHeader from "./QueryFormHeader";
+import InputField from "../../commonComponents/inputField/InputField";
 
 const QuaryInformation = () => {
   return (
@@ -13,6 +14,7 @@ const QuaryInformation = () => {
       <QuaryForm />
       <QuaryCard />
       <QuaryTable />
+      <InputField />
     </div>
   );
 };
