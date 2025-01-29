@@ -29,6 +29,14 @@ function App() {
         <Route path={`travel/create-quary`} element={<AddQuary  />} />
         <Route path={`daily-duty`} element={<DailyDutySheet />} />
         <Route path={`hotel-reservation`} element={<HotelReservation />} />
+        <Route path="querypackage" element={<QueryPackage />} />
+        <Route path="sale/dsr" element={<SaleDSR />} />
+        <Route path="sale/adddrs" element={<DSRForm />} />
+        <Route path="sale/calls" element={<SaleCalls />} />
+        <Route path="sale/addcalls" element={<AddCalls />} />
+        <Route path="sale/meeting" element={<Meeting />} />
+        <Route path="sale/addmeeting" element={<AddMeeting />} />
+
       </Routes>
 
     </>
