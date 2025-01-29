@@ -51,7 +51,7 @@ const AddQuaryInformation = () => {
         <div>
           <div className="flex  bg-headerBg text-white align-middle justify-between rounded-md p-2">
             <h2 className="text-lg font-semibold">Query Information</h2>
-            <button className="bg-blue-500 hover:bg-blue-700 text-white font-bold py-2 px-4 rounded-full uppercase">
+            <button  onClick={() => togglePopup()} className="bg-blue-500 hover:bg-blue-700 text-white font-bold py-2 px-4 rounded-full uppercase">
               Add New Agent/Client
             </button>
           </div>
@@ -489,8 +489,8 @@ const AddQuaryInformation = () => {
           Search
         </button>
       </div>
-
-      <AddNewAgent isOpen={isOpen} togglePopup={togglePopup} />
+     
+          <AddNewAgent isOpen={isOpen} setIsOpen={setIsOpen}/>
     </div>
   );
 };

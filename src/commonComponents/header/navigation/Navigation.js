@@ -1,11 +1,29 @@
 import React from 'react'
 import logo from "../../../assets/image/logo/gotax.png"
 import profile from "../../../assets/image/products/profile.jpg"
-import { Link } from 'react-router-dom'
+import { Link, useNavigate } from 'react-router-dom'
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
-import { faEnvelope } from '@fortawesome/free-regular-svg-icons'
-import { faKey, faList, faMoneyCheckDollar, faRecycle } from '@fortawesome/free-solid-svg-icons'
-function Navigation() {
+import { faCircleLeft, faEnvelope, faFileExcel, faHandshake } from '@fortawesome/free-regular-svg-icons'
+import { Popover, PopoverButton, PopoverPanel } from '@headlessui/react'
+
+import { faBullseye, faCircleUser, faFileFragment, faFileInvoice, faKey, faList, faMoneyCheckDollar, faPhoneVolume, faRecycle, faSquareH, faSquarePollVertical, faTableCells } from '@fortawesome/free-solid-svg-icons'
+import { faIntercom } from '@fortawesome/free-brands-svg-icons'
+function Navigation({ setIsAuthenticated, isAuthenticated }) {
+    const navigate = useNavigate()
+
+    const handleLogOut = () => {
+        setIsAuthenticated(false)
+        console.log(isAuthenticated, "Outer");
+        if (isAuthenticated) {
+            navigate(`/login`)
+            window.location.reload(true);
+
+
+        } else {
+            navigate(`/dashboard`)
+        }
+
+    };
     return (
         <>
 
@@ -26,9 +44,9 @@ function Navigation() {
                             </button>
                         </div>
                         <div className="flex flex-1 items-center justify-center  sm:justify-start">
-                            <div className="flex shrink-0 items-center">
+                            <Link to={"/"} className="flex shrink-0 items-center">
                                 <img className="h-12 w-auto" src={logo} alt="Your Company" />
-                            </div>
+                            </Link>
                             <div className="hidden sm:ml-6 sm:block">
                                 <div className="flex space-x-4">
 
@@ -37,8 +55,8 @@ function Navigation() {
                                         className="rounded-md px-3 py-2 text-sm font-medium text-white uppercase"
                                         aria-current="page"
                                     >
-                                        <span className='px-2'>
-                                            <FontAwesomeIcon icon={faEnvelope} className="text-white" />
+                                        <span className='px-1'>
+                                            <FontAwesomeIcon icon={faEnvelope} className="text-xs text-white" />
                                         </span>
                                         <span>
                                             Mail
@@ -46,31 +64,139 @@ function Navigation() {
                                     </Link>
 
                                     <Link to={"travel/query"} className="rounded-md px-3 py-2 text-sm font-medium text-gray-300 hover:bg-gray-700 hover:text-white uppercase">
-                                        <span className='px-2'>
-                                            <FontAwesomeIcon icon={faList} className="text-white" />
+                                        <span className='px-1'>
+                                            <FontAwesomeIcon icon={faList} className="text-xs text-white" />
                                         </span>
                                         <span>
                                             Qurrey
                                         </span>
                                     </Link>
-                                    <Link to={"#"} className="rounded-md px-3 py-2 text-sm font-medium text-gray-300 hover:bg-gray-700 hover:text-white uppercase">
-                                        <span className='px-2'>
-                                            <FontAwesomeIcon icon={faRecycle} className="text-white" />
+                                    <Popover className="relative">
+                                        <PopoverButton className="rounded-md px-3 py-2 text-sm font-medium text-gray-300 hover:bg-gray-700 hover:text-white uppercase"><span className='px-1'>
+                                            <FontAwesomeIcon icon={faRecycle} className="text-xs text-white" />
                                         </span>
-                                        <span>
-                                            Operations
+                                            <span>
+                                                Operations
+                                            </span>
+                                        </PopoverButton>
+                                        <PopoverPanel anchor="bottom" className="flex flex-col bg-headerBg p-5 text-white rounded -z-1 w-[185px]">
+                                            <Link to={"/daily-duty-sheet"} className='py-1'>
+                                                <span className='px-1'>
+                                                    <FontAwesomeIcon icon={faTableCells} className="text-xs text-white" />
+                                                </span>
+                                                <span>
+                                                    Daily Duty sheet
+                                                </span>
+                                            </Link>
+
+                                            <Link to={""} className='py-1'>
+                                                <span className='px-1'>
+                                                    <FontAwesomeIcon icon={faFileInvoice} className="text-xs text-white" />
+                                                </span>
+                                                <span>
+                                                    Invoice
+                                                </span>
+                                            </Link>
+                                            <Link to={""} className='py-1'>
+                                                <span className='px-1'>
+                                                    <FontAwesomeIcon icon={faList} className="text-xs text-white" />
+                                                </span>
+                                                <span>
+                                                    Quotaion
+                                                </span>
+                                            </Link>
+                                            <Link to={""} className='py-1'>
+                                                <span className='px-1'>
+                                                    <FontAwesomeIcon icon={faFileFragment} className="text-xs text-white" />
+                                                </span>
+                                                <span>
+                                                    Visa Request
+                                                </span>
+                                            </Link>
+                                            <Link to={"hotel-reservation"} className='py-1'>
+                                                <span className='px-1'>
+                                                    <FontAwesomeIcon icon={faSquareH} className="text-xs text-white" />
+                                                </span>
+                                                <span>
+                                                    Hotel Reservation
+                                                </span>
+                                            </Link>
+
+                                            <Link to={""} className='py-1'>
+                                                <span className='px-1'>
+                                                    <FontAwesomeIcon icon={faFileInvoice} className="text-xs text-white" />
+                                                </span>
+                                                <span>
+                                                    Manual Invoice
+                                                </span>
+                                            </Link>
+                                            <Link to={""} className='py-1'>
+                                                <span className='px-1'>
+                                                    <FontAwesomeIcon icon={faFileExcel} className="text-xs text-white" />
+                                                </span>
+                                                <span>
+                                                    Tour Master Sheet
+                                                </span>
+                                            </Link>
+                                            <Link to={""} className='py-1'>
+                                                <span className='px-1'>
+                                                    <FontAwesomeIcon icon={faIntercom} className="text-xs text-white" />
+                                                </span>
+                                                <span>
+                                                    Voucher
+                                                </span>
+                                            </Link>
+                                        </PopoverPanel>
+                                    </Popover>
+                                    <Popover className="relative">
+                                        <PopoverButton className="rounded-md px-3 py-2 text-sm font-medium text-gray-300 hover:bg-gray-700 hover:text-white uppercase"><span className='px-1'>
+                                            <FontAwesomeIcon icon={faMoneyCheckDollar} className="text-xs text-white" />
                                         </span>
-                                    </Link>
-                                    <Link to={"#"} className="rounded-md px-3 py-2 text-sm font-medium text-gray-300 hover:bg-gray-700 hover:text-white uppercase">
-                                        <span className='px-2'>
-                                            <FontAwesomeIcon icon={faMoneyCheckDollar} className="text-white" />
-                                        </span>
-                                        <span>
-                                            Sale
-                                        </span>
-                                    </Link>
-                                    <Link to={"#"} className="rounded-md px-3 py-2 text-sm font-medium text-gray-300 hover:bg-gray-700 hover:text-white uppercase"><span className='px-2'>
-                                        <FontAwesomeIcon icon={faKey} className="text-white" />
+                                            <span>
+                                                SALE
+                                            </span>
+                                        </PopoverButton>
+                                        <PopoverPanel anchor="bottom" className="flex flex-col bg-headerBg p-5 text-white rounded -z-1 w-[185px]">
+                                            <Link to={""} className='py-1'>
+                                                <span className='px-1'>
+                                                    <FontAwesomeIcon icon={faSquarePollVertical} className="text-xs text-white" />
+                                                </span>
+                                                <span>
+                                                    DSR
+                                                </span>
+                                            </Link>
+
+                                            <Link to={""} className='py-1'>
+                                                <span className='px-1'>
+                                                    <FontAwesomeIcon icon={faPhoneVolume} className="text-xs text-white" />
+                                                </span>
+                                                <span>
+                                                    Call
+                                                </span>
+                                            </Link>
+                                            <Link to={""} className='py-1'>
+                                                <span className='px-1'>
+                                                    <FontAwesomeIcon icon={faHandshake} className="text-xs text-white" />
+                                                </span>
+                                                <span>
+                                                    Meeting
+                                                </span>
+                                            </Link>
+                                            <Link to={""} className='py-1'>
+                                                <span className='px-1'>
+                                                    <FontAwesomeIcon icon={faBullseye} className="text-xs text-white" />
+                                                </span>
+                                                <span>
+                                                    Sale
+                                                </span>
+                                            </Link>
+
+                                        </PopoverPanel>
+                                    </Popover>
+
+
+                                    <Link to={"#"} className="rounded-md px-3 py-2 text-sm font-medium text-gray-300 hover:bg-gray-700 hover:text-white uppercase"><span className='px-1'>
+                                        <FontAwesomeIcon icon={faKey} className="text-xs text-white" />
 
                                     </span>
                                         <span>
@@ -79,7 +205,7 @@ function Navigation() {
                                 </div>
                             </div>
                         </div>
-                        <div className="absolute inset-y-0 right-0 flex items-center pr-2 sm:static sm:inset-auto sm:ml-6 sm:pr-0">
+                        <div className="absolute inset-y-0 right-0 flex items-center pr-2 sm:static sm:inset-auto sm:ml-6 sm:pr-0 ">
                             <button type="button" className="relative rounded-full bg-gray-800 p-1 text-gray-400 hover:text-white focus:ring-2 focus:ring-white focus:ring-offset-2 focus:ring-offset-gray-800 focus:outline-hidden">
                                 <span className="absolute -inset-1.5" />
                                 <span className="sr-only">View notifications</span>
@@ -87,22 +213,34 @@ function Navigation() {
                                     <path strokeLinecap="round" strokeLinejoin="round" d="M14.857 17.082a23.848 23.848 0 0 0 5.454-1.31A8.967 8.967 0 0 1 18 9.75V9A6 6 0 0 0 6 9v.75a8.967 8.967 0 0 1-2.312 6.022c1.733.64 3.56 1.085 5.455 1.31m5.714 0a24.255 24.255 0 0 1-5.714 0m5.714 0a3 3 0 1 1-5.714 0" />
                                 </svg>
                             </button>
-                            {/* Profile dropdown */}
-                            <div className="relative ml-3">
-                                <div>
+                            <div className="relative ml-3 group bg-black px-4 py-2">
+                                <div className='flex items-center'>
                                     <button type="button" className="relative flex rounded-full bg-gray-800 text-sm focus:ring-2 focus:ring-white focus:ring-offset-2 focus:ring-offset-gray-800 focus:outline-hidden" id="user-menu-button" aria-expanded="false" aria-haspopup="true">
                                         <span className="absolute -inset-1.5" />
-                                        <span className="sr-only">Open user menu</span>
+
                                         <img className="size-8 rounded-full" src={profile} alt='profile-img' />
+
                                     </button>
+                                    <div className='mx-3 '>
+                                        <span className=" text-white">Karan</span>
+                                        <div  className=" text-white">admin@gmail.com</div >
+                                    </div>
                                 </div>
 
-                                {/* <div className="absolute right-0 z-10 mt-2 w-48 origin-top-right rounded-md bg-white py-1 ring-1 shadow-lg ring-black/5 focus:outline-hidden" role="menu" aria-orientation="vertical" aria-labelledby="user-menu-button" tabIndex={-1}>
-
-                                    <Link to={"#"} className="block px-4 py-2 text-sm text-gray-700" role="menuitem" tabIndex={-1} id="user-menu-item-0">Your Profile</Link>
-                                    <Link to={"#"} className="block px-4 py-2 text-sm text-gray-700" role="menuitem" tabIndex={-1} id="user-menu-item-1">Settings</Link>
-                                    <Link to={"#"} className="block px-4 py-2 text-sm text-gray-700" role="menuitem" tabIndex={-1} id="user-menu-item-2">Sign out</Link>
-                                </div> */}
+                                <div className="absolute right-0 z-10 mt-2 w-48 origin-top-right rounded-md bg-white py-1 ring-1 shadow-lg ring-black/5 focus:outline-hidden hidden group-hover:block" role="menu" aria-orientation="vertical" aria-labelledby="user-menu-button" tabIndex={-1}>
+                                    <Link to={"/profile"} className=" px-4 py-2 text-sm text-gray-700" role="menuitem" tabIndex={-1} id="user-menu-item-0">
+                                        <span className='text-headerBg'>
+                                            <FontAwesomeIcon icon={faCircleUser} className='px-2' />
+                                        </span>
+                                        <span className='uppercase'>Your Profile</span>
+                                    </Link>
+                                    <button className=" px-4 py-2 text-sm text-gray-700" role="menuitem" tabIndex={-1} id="user-menu-item-2" onClick={handleLogOut}>
+                                        <span className='text-headerBg'>
+                                            <FontAwesomeIcon icon={faCircleLeft} className='px-2' />
+                                        </span>
+                                        <span className='uppercase'>Log out</span>
+                                    </button>
+                                </div>
                             </div>
                         </div>
                     </div>

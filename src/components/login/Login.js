@@ -2,11 +2,13 @@ import React, { useState } from "react";
 import loginBg from "../../assets/image/products/login-bg.jpg";
 import logo from "../../assets/image/logo/gotax-removebg.png";
 import vector from "../../assets/image/products/Vector-3.png";
-import { Link, useNavigate } from "react-router-dom";
+import { useNavigate } from "react-router-dom";
 import LoginForm from "./loginform/LoginForm";
 import ForgotPassword from "./forgotPassword/ForgotPassword";
 
 function Login({ setIsAuthenticated, isAuthenticated }) {
+  
+  
   const navigate = useNavigate()
   const [email, setEmail] = useState("");
   const [password, setPassword] = useState("");
@@ -19,19 +21,18 @@ function Login({ setIsAuthenticated, isAuthenticated }) {
 
     if (email !== validEmail) {
       setError("Invalid email address.");
-      return; // Stop further execution if email is invalid
+      return; 
     }
 
-    // Validate password
     if (password !== validPassword) {
       setError("Invalid password.");
-      return; // Stop further execution if password is invalid
+      return; 
     }
-    setIsAuthenticated(true);
-    navigate(`/`); // Redirect to the home page or dashboard
+    setIsAuthenticated(!isAuthenticated);
+    navigate(`/`); 
     setError("");
+    
   };
-
 
   return (
     <div
@@ -67,7 +68,6 @@ function Login({ setIsAuthenticated, isAuthenticated }) {
                   error={error}
                   setForgotPasswordUi={setForgotPasswordUi}
                 />
-                {/* <ForgotPassword /> */}
               </>
             ) : (
               <>
@@ -76,7 +76,7 @@ function Login({ setIsAuthenticated, isAuthenticated }) {
             )}
           </div>
         </div>
-        <div className="absolute  bottom-0">
+        <div className="absolute  bottom-0 ">
           <img src={vector} alt="vector" />
         </div>
       </div>

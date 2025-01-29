@@ -1,9 +1,14 @@
-import { faCalendarCheck, faClock, faEdit, faEnvelope, faSquare, faStar } from "@fortawesome/free-regular-svg-icons";
-import { faBox, faCircleRadiation, faFilter, faLocationDot, faMobile, faPerson, faPhone, faUser } from "@fortawesome/free-solid-svg-icons";
+import { faCalendarCheck, faClock, faEdit, faEnvelope, faStar } from "@fortawesome/free-regular-svg-icons";
+import { faBox,  faFilter, faLocationDot, faPerson, faPhone, faUser } from "@fortawesome/free-solid-svg-icons";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
-import React from "react";
+import React, { useState } from "react";
+import ViewQueryHistory from "../viewQueryHistory/ViewQueryHistory";
 
 const QuaryTable = () => {
+  const [isOpen, setIsOpen] = useState(false)
+  function onClickPop(){
+    setIsOpen(!isOpen)
+  }
   return (
     <div className="overflow-x-auto mt-4">
       <table className="min-w-full table-auto border-collapse text-sm border border-gray-300">
@@ -101,7 +106,7 @@ const QuaryTable = () => {
                 <span className="bg-yellow-400 text-center text-sm text-black px-2 py-1 rounded-md">
                   Pending
                 </span>
-                <button className="bg-transparent border border-blue-500 text-blue-500 px-3 py-1 text-xs rounded-md mt-1 hover:bg-blue-500 hover:text-white">
+                <button onClick={() => onClickPop()} className="bg-transparent border border-blue-500 text-blue-500 px-3 py-1 text-xs rounded-md mt-1 hover:bg-blue-500 hover:text-white">
                   View History
                 </button>
               </div>
@@ -128,6 +133,7 @@ const QuaryTable = () => {
           </tr>
         </tbody>
       </table>
+      <ViewQueryHistory isOpen={isOpen} setIsOpen={setIsOpen}/>
     </div>
   );
 };

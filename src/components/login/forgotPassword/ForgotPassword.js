@@ -9,7 +9,7 @@ function ForgotPassword() {
         <>
             <form>
                 <div
-                    className="space-y-12 border-white-600 p-5 rounded-tl-2xl rounded-br-2xl border border-white"
+                    className="space-y-4 border-white-600 p-5 rounded-tl-2xl rounded-br-2xl border border-white"
                     style={{
                         backgroundColor: "rgba(250, 250, 250, 0.4)",
                     }}
