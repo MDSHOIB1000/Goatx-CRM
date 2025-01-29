@@ -56,7 +56,7 @@ const QuotationTable = () => {
   const [isActive, setIsActive] = useState(false);
   return (
     <div className="mt-4">
-      <div className="overflow-x-auto scrollbar-thin scrollbar-thumb-gray-300 scrollbar-track-gray-100">
+      <div className="overflow-x-auto scrollbar-thin scrollbar-thumb-headerBg scrollbar-track-gray-100">
         <table className="min-w-full table-auto border-collapse text-sm border border-gray-300">
           <thead className="bg-headerBg text-white">
             <tr>
