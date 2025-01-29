@@ -1,0 +1,186 @@
+import React from "react";
+
+const DailyDutyForm = () => {
+  return (
+    <div>
+      <form>
+        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-4 mt-4">
+          <div className="flex flex-col">
+            <label htmlFor="start-date" className="text-sm font-medium mb-1">
+              To Date
+            </label>
+            <input
+              type="date"
+              id="start-date"
+              className="px-3 py-2 border border-gray-300 rounded-md focus:outline-none focus:ring-2 focus:ring-blue-500 focus:border-blue-500"
+            />
+          </div>
+
+          <div className="flex flex-col">
+            <label htmlFor="end-date" className="text-sm font-medium mb-1">
+              From Date
+            </label>
+            <input
+              type="date"
+              id="end-date"
+              className="px-3 py-2 border border-gray-300 rounded-md focus:outline-none focus:ring-2 focus:ring-blue-500 focus:border-blue-500"
+            />
+          </div>
+
+          <div className="flex flex-col">
+            <label htmlFor="lead-source" className="text-sm font-medium mb-1">
+              Activity
+            </label>
+            <select
+              id="lead-source"
+              className="px-3 py-2 border border-gray-300 rounded-md focus:outline-none focus:ring-2 focus:ring-blue-500 focus:border-blue-500"
+            >
+              <option value="" selected disabled>
+                Open this select menu
+              </option>
+              <option value="1">1</option>
+              <option value="2">2</option>
+            </select>
+          </div>
+
+          <div className="flex flex-col">
+            <label htmlFor="lead-source" className="text-sm font-medium mb-1">
+              Transfer
+            </label>
+            <select
+              id="lead-source"
+              className="px-3 py-2 border border-gray-300 rounded-md focus:outline-none focus:ring-2 focus:ring-blue-500 focus:border-blue-500"
+            >
+              <option value="" selected disabled>
+                Open this select menu
+              </option>
+              <option value="1">1</option>
+              <option value="2">2</option>
+            </select>
+          </div>
+
+          <div className="flex flex-col">
+            <label htmlFor="lead-source" className="text-sm font-medium mb-1">
+              Meal
+            </label>
+            <select
+              id="lead-source"
+              className="px-3 py-2 border border-gray-300 rounded-md focus:outline-none focus:ring-2 focus:ring-blue-500 focus:border-blue-500"
+            >
+              <option value="" selected disabled>
+                Extra
+              </option>
+              <option value="1">1</option>
+              <option value="2">2</option>
+            </select>
+          </div>
+
+          <div className="flex flex-col">
+            <label htmlFor="lead-source" className="text-sm font-medium mb-1">
+              SIC/ PVT
+            </label>
+            <select
+              id="lead-source"
+              className="px-3 py-2 border border-gray-300 rounded-md focus:outline-none focus:ring-2 focus:ring-blue-500 focus:border-blue-500"
+            >
+              <option value="" selected disabled>
+                Open this select menu
+              </option>
+              <option value="1">1</option>
+              <option value="2">2</option>
+            </select>
+          </div>
+
+          <div className="flex flex-col">
+            <label htmlFor="lead-source" className="text-sm font-medium mb-1">
+              Guide
+            </label>
+            <select
+              id="lead-source"
+              className="px-3 py-2 border border-gray-300 rounded-md focus:outline-none focus:ring-2 focus:ring-blue-500 focus:border-blue-500"
+            >
+              <option value="" selected disabled>
+                Open this select menu
+              </option>
+              <option value="1">1</option>
+              <option value="2">2</option>
+            </select>
+          </div>
+
+          <div className="flex flex-col">
+            <label htmlFor="lead-source" className="text-sm font-medium mb-1">
+              Drive
+            </label>
+            <select
+              id="lead-source"
+              className="px-3 py-2 border border-gray-300 rounded-md focus:outline-none focus:ring-2 focus:ring-blue-500 focus:border-blue-500"
+            >
+              <option value="" selected disabled>
+                Open this select menu
+              </option>
+              <option value="1">1</option>
+              <option value="2">2</option>
+            </select>
+          </div>
+
+          <div className="flex flex-col">
+            <label htmlFor="query-id" className="text-sm font-medium mb-1">
+              Guest Name
+            </label>
+            <input
+              type="text"
+              id="query-id"
+              placeholder="Search by Guest Name"
+              className="px-3 py-2 border border-gray-300 rounded-md focus:outline-none focus:ring-2 focus:ring-blue-500 focus:border-blue-500"
+            />
+          </div>
+
+          <div className="flex flex-col">
+            <label
+              htmlFor="quotationry-id"
+              className="text-sm font-medium mb-1"
+            >
+              Quey Id
+            </label>
+            <input
+              type="text"
+              id="quotationry-id"
+              placeholder="Search by Query Id"
+              className="px-3 py-2 border border-gray-300 rounded-md focus:outline-none focus:ring-2 focus:ring-blue-500 focus:border-blue-500"
+            />
+          </div>
+        </div>
+
+        {/* Save Button */}
+        <div className="flex items-center gap-3 justify-center">
+          <button
+            type="button"
+            className="py-2 px-8 bg-green-500 text-white rounded-md hover:bg-green-700 mt-3"
+          >
+            Search
+          </button>
+          <button
+            type="button"
+            className="py-2 px-8 bg-green-500 text-white rounded-md hover:bg-green-700 mt-3"
+          >
+            All
+          </button>
+          <button
+            type="button"
+            className="py-2 px-8 bg-green-500 text-white rounded-md hover:bg-green-700 mt-3"
+          >
+            Export
+          </button>
+          <button
+            type="button"
+            className="py-2 px-8 bg-green-500 text-white rounded-md hover:bg-green-700 mt-3"
+          >
+            Send
+          </button>
+        </div>
+      </form>
+    </div>
+  );
+};
+
+export default DailyDutyForm;
