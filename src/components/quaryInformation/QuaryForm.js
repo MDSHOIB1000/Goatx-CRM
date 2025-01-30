@@ -160,7 +160,7 @@ const QuaryForm = () => {
       <div className="flex flex-col mt-6">
         <button
           type="button"
-          className="py-2 px-8 bg-green-700 text-white rounded-md hover:bg-green-800"
+         className="py-1 px-8 bg-indigo-900 text-white rounded hover:bg-headerBg mt-3"
         >
           Search
         </button>
