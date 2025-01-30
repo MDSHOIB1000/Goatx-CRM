@@ -1,4 +1,7 @@
 import React from 'react'
+import { Menu, MenuButton, MenuItem, MenuItems } from '@headlessui/react'
+
+
 import logo from "../../../assets/image/logo/gotax.png"
 import profile from "../../../assets/image/products/profile.jpg"
 import { Link, useNavigate } from 'react-router-dom'
@@ -79,7 +82,7 @@ function Navigation({ setIsAuthenticated, isAuthenticated }) {
                                                 Operations
                                             </span>
                                         </PopoverButton>
-                                        <PopoverPanel anchor="bottom" className="flex flex-col bg-headerBg p-5 text-white rounded -z-1 w-[185px]">
+                                        <PopoverPanel transition anchor="bottom" className="flex flex-col bg-headerBg p-5 text-white rounded -z-1 w-[185px] transition data-closed:translate-y-1 data-closed:opacity-0 data-enter:duration-200 data-enter:ease-out data-leave:duration-150 data-leave:ease-in">
                                             <Link to={"/daily-duty-sheet"} className='py-1'>
                                                 <span className='px-1'>
                                                     <FontAwesomeIcon icon={faTableCells} className="text-xs text-white" />
@@ -89,7 +92,7 @@ function Navigation({ setIsAuthenticated, isAuthenticated }) {
                                                 </span>
                                             </Link>
 
-                                            <Link to={""} className='py-1'>
+                                            <Link to={"/invoice"} className='py-1'>
                                                 <span className='px-1'>
                                                     <FontAwesomeIcon icon={faFileInvoice} className="text-xs text-white" />
                                                 </span>
@@ -97,12 +100,12 @@ function Navigation({ setIsAuthenticated, isAuthenticated }) {
                                                     Invoice
                                                 </span>
                                             </Link>
-                                            <Link to={""} className='py-1'>
+                                            <Link to={"/quotation"} className='py-1'>
                                                 <span className='px-1'>
                                                     <FontAwesomeIcon icon={faList} className="text-xs text-white" />
                                                 </span>
                                                 <span>
-                                                    Quotaion
+                                                    Quotation
                                                 </span>
                                             </Link>
                                             <Link to={""} className='py-1'>
@@ -122,7 +125,7 @@ function Navigation({ setIsAuthenticated, isAuthenticated }) {
                                                 </span>
                                             </Link>
 
-                                            <Link to={""} className='py-1'>
+                                            <Link to={"/manual-invoice"} className='py-1'>
                                                 <span className='px-1'>
                                                     <FontAwesomeIcon icon={faFileInvoice} className="text-xs text-white" />
                                                 </span>
@@ -130,7 +133,7 @@ function Navigation({ setIsAuthenticated, isAuthenticated }) {
                                                     Manual Invoice
                                                 </span>
                                             </Link>
-                                            <Link to={""} className='py-1'>
+                                            <Link to={"tour-master"} className='py-1'>
                                                 <span className='px-1'>
                                                     <FontAwesomeIcon icon={faFileExcel} className="text-xs text-white" />
                                                 </span>
@@ -156,7 +159,7 @@ function Navigation({ setIsAuthenticated, isAuthenticated }) {
                                                 SALE
                                             </span>
                                         </PopoverButton>
-                                        <PopoverPanel anchor="bottom" className="flex flex-col bg-headerBg p-5 text-white rounded -z-1 w-[185px]">
+                                        <PopoverPanel transition anchor="bottom" className="flex flex-col bg-headerBg p-5 text-white rounded -z-1 w-[185px]">
                                             <Link to={""} className='py-1'>
                                                 <span className='px-1'>
                                                     <FontAwesomeIcon icon={faSquarePollVertical} className="text-xs text-white" />
@@ -202,6 +205,7 @@ function Navigation({ setIsAuthenticated, isAuthenticated }) {
                                         <span>
                                             Master
                                         </span></Link>
+
                                 </div>
                             </div>
                         </div>
@@ -223,7 +227,7 @@ function Navigation({ setIsAuthenticated, isAuthenticated }) {
                                     </button>
                                     <div className='mx-3 '>
                                         <span className=" text-white">Karan</span>
-                                        <div  className=" text-white">admin@gmail.com</div >
+                                        <div className=" text-white">admin@gmail.com</div >
                                     </div>
                                 </div>
 

@@ -1,0 +1,24 @@
+import { faCirclePlus } from "@fortawesome/free-solid-svg-icons";
+import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
+import React from "react";
+
+const TourMasterHeader = () => {
+  return (
+    <div className="bg-black py-2 px-2 flex items-center justify-between">
+      <h2 className=" text-white font-semibold text-lg">Tour Master Sheet</h2>
+      <div>
+        <button
+          type="button"
+          className="py-[6px] px-5 bg-gradient-to-r from-blue-500 to-blue-700 text-white font-semibold 
+             rounded-md shadow-md hover:shadow-lg hover:from-blue-600 hover:to-blue-800 
+             transition-all duration-300 flex items-center gap-2"
+        >
+          <FontAwesomeIcon icon={faCirclePlus} className="mr-1" />
+          Download In Excel
+        </button>
+      </div>
+    </div>
+  );
+};
+
+export default TourMasterHeader;
