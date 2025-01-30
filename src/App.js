@@ -18,6 +18,7 @@ import Invoice from "./Pages/operations/invoice";
 import ManualInvoice from "./Pages/operations/manualInvoice";
 import Quotation from "./Pages/operations/quotation";
 import TourMasterSheet from "./Pages/operations/tourMasterSheet";
+import ProfileForm from "./components/profile/profileForm/ProfileForm";
 
 function App() {
   const [isAuthenticated, setIsAuthenticated] = useState(false);
@@ -40,6 +41,7 @@ function App() {
           <Route path="/" element={<Layout setIsAuthenticated={setIsAuthenticated} isAuthenticated={isAuthenticated} />}>
             <Route path="/" element={<Navigate to="dashboard" replace />} />
             <Route path="profile" element={<Profilepage />} />
+            <Route path="profile/edit-profile" element={<ProfileForm />} />
             <Route path="dashboard" element={<Dashboard />} />
             <Route path="travel/query" element={<Quary />} />
             <Route path="travel/create-quary" element={<AddQuary />} />

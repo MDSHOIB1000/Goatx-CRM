@@ -5,7 +5,7 @@ import TourMasterTable from './TourMasterTable'
 
 const TourMasterInformaiton = () => {
   return (
-    <div className="border  p-4 shadow-sm m-2 mt-2 rounded">
+    <div className="border rounded-lg shadow p-4 m-4">
       <TourMasterHeader />
       <TourMasterForm />
       <TourMasterTable />

@@ -1,15 +1,15 @@
 import { faCalendarCheck, faClock, faEdit, faEnvelope, faStar } from "@fortawesome/free-regular-svg-icons";
-import { faBox,  faFilter, faLocationDot, faPerson, faPhone, faUser } from "@fortawesome/free-solid-svg-icons";
+import { faBox, faCalendarDay, faFilter, faLocationDot, faPerson, faPhone, faUser } from "@fortawesome/free-solid-svg-icons";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import React, { useState } from "react";
 import ViewQueryHistory from "../viewQueryHistory/ViewQueryHistory";
 
 const QuaryTable = () => {
   const [isOpen, setIsOpen] = useState(false)
-  function onClickPop(){
+  function onClickPop() {
     setIsOpen(!isOpen)
   }
-  
+
   return (
     <div className="overflow-x-auto mt-4 scrollbar-thin scrollbar-thumb-headerBg scrollbar-track-gray-100">
       <table className="min-w-full table-auto border-collapse text-sm border border-gray-300">
@@ -48,7 +48,7 @@ const QuaryTable = () => {
               <div className="flex flex-col">
                 <strong>Thailand query</strong>
                 <span>
-                  <i className="fa-solid fa-calendar-days"></i> Travel Date: 15 Feb - 20 Feb 2025
+                  <FontAwesomeIcon icon={faCalendarDay} /> Travel Date: 15 Feb - 20 Feb 2025
                 </span>
                 <span>
                   <FontAwesomeIcon icon={faClock} />
@@ -86,7 +86,7 @@ const QuaryTable = () => {
                   <span><FontAwesomeIcon icon={faEnvelope} /></span> <span>Email:</span>
                 </span>
                 <span>
-                  <span>Mobile No.: 7860601111</span>
+                  <span><FontAwesomeIcon icon={faPhone} /></span>  <span>Mobile No.: 7860601111</span>
                 </span>
                 <span>
                   <span><FontAwesomeIcon icon={faPhone} /></span> Landline No.: 7860601111
@@ -134,7 +134,7 @@ const QuaryTable = () => {
           </tr>
         </tbody>
       </table>
-      <ViewQueryHistory isOpen={isOpen} setIsOpen={setIsOpen}/>
+      <ViewQueryHistory isOpen={isOpen} setIsOpen={setIsOpen} />
     </div>
   );
 };

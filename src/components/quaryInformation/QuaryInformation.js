@@ -9,7 +9,7 @@ import InputField from "../../commonComponents/inputField/InputField";
 
 const QuaryInformation = () => {
   return (
-    <div className="border rounded-lg shadow p-4 m-2">
+    <div className="border rounded-lg shadow p-4 m-4">
       <QueryFormHeader />
       <QuaryForm />
       <QuaryCard />

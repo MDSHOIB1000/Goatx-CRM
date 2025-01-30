@@ -12,10 +12,10 @@ function LoginForm({ handleLogin, email, setEmail, password, setPassword, error,
                 >
                     <div className="border-b border-gray-900/10">
                         <h2 className="text-base/7 font-semibold text-gray-900 uppercase">
-                            Welcome Back Goatx CRM
+                            Welcome To Goatx CRM
                         </h2>
                         <p className="mt-1 text-sm/6 text-gray-600 uppercase">
-                            <i>Sign in to continue to Goatx WanderLust.</i>
+                            <i>Sign in to continue to Goatx.</i>
                         </p>
 
                         <div className="mt-5 grid grid-cols-1   sm:grid-cols-6">
@@ -47,7 +47,7 @@ function LoginForm({ handleLogin, email, setEmail, password, setPassword, error,
                                     >
                                         Password
                                     </label>
-                                    <span className="text-sm" onClick={(() => setForgotPasswordUi(true))}>
+                                    <span className="text-sm cursor-pointer" onClick={(() => setForgotPasswordUi(true))}>
                                         <small>
                                             <i>Forgot password</i>
                                         </small>
