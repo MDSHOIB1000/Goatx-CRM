@@ -1,17 +1,13 @@
 import { faCircleXmark } from "@fortawesome/free-regular-svg-icons";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { Dialog } from "@headlessui/react";
-import { useState } from "react";
-import EditQuotationTable from "./EditQuotationTable";
 
-const EditSupplier = ({ isActive, setIsActive, quotation }) => {
-  const [serviceType, setServiceType] = useState(false);
-
+const EditSupplier = ({ isActive, setIsActive }) => {
   return (
     <Dialog
       open={isActive}
       onClose={() => setIsActive(false)}
-      className="fixed inset-0 z-50 flex items-center justify-center bg-black bg-opacity-50 "
+      className="fixed inset-0 z-50 flex items-center justify-center bg-black bg-opacity-50"
     >
       <Dialog.Panel className="scrollbar-thin scrollbar-thumb-headerBg scrollbar-track-gray-100 overflow-y-scroll overflow-x-hidden bg-white p-6 rounded-lg mx-2 md:mx-0 shadow-lg w-[100%] md:w-[70%] relative h-[calc(100vh-200px)] lg:h-[calc(100vh-100px)]">
         {/* Close Button */}
@@ -26,251 +22,195 @@ const EditSupplier = ({ isActive, setIsActive, quotation }) => {
         </button>
 
         {/* Dialog Title */}
-        <div className="text-md font-semibold bg-black text-white py-1 px-2 ">
-          {quotation === true ? "Add New Quotation" : "Edit Quotation"}
-        </div>
+        <Dialog.Title className="text-lg font-semibold bg-black text-white p-2">
+          Edit Supplier Payment - Transfer
+        </Dialog.Title>
 
         {/* Form Content */}
         <form>
-          <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 mt-4 gap-4">
-            <div className="flex flex-col">
-              <label htmlFor="end-date" className="text-sm font-medium mb-1">
-                Quotation Title
-              </label>
-              <input
-                type="text"
-                id="end-date"
-                className="px-3 py-2 border border-gray-300 rounded-md focus:outline-none focus:ring-2 focus:ring-blue-500 focus:border-blue-500"
-              />
-            </div>
-            <div className="flex flex-col">
-              <label htmlFor="end-date" className="text-sm font-medium mb-1">
-                Adults
-              </label>
-              <input
-                type="text"
-                id=""
-                className="px-3 py-2 border border-gray-300 rounded-md focus:outline-none focus:ring-2 focus:ring-blue-500 focus:border-blue-500"
-              />
-            </div>
-            <div className="flex flex-col">
-              <label htmlFor="end-date" className="text-sm font-medium mb-1">
-                Childs
-              </label>
-              <input
-                type="text"
-                id=""
-                className="px-3 py-2 border border-gray-300 rounded-md focus:outline-none focus:ring-2 focus:ring-blue-500 focus:border-blue-500"
-              />
-            </div>
-            <div className="flex flex-col">
-              <label htmlFor="end-date" className="text-sm font-medium mb-1">
-                Infants
-              </label>
-              <input
-                type="text"
-                id=""
-                className="px-3 py-2 border border-gray-300 rounded-md focus:outline-none focus:ring-2 focus:ring-blue-500 focus:border-blue-500"
-              />
-            </div>
+          <div>
+            <div className="grid grid-cols-1 lg:grid-cols-2 mt-4 gap-x-4">
+              <div>
+                <table className="w-full border-collapse border border-gray-300">
+                  <tbody>
+                    <tr className="bg-gray-200 ">
+                      <th
+                        colspan="2"
+                        className="text-left p-3 text-lg font-semibold"
+                      >
+                        Transfer
+                      </th>
+                    </tr>
 
-            <div className="flex flex-col w-full">
-              <label
-                htmlFor="service-type"
-                className="text-sm font-medium mb-1 text-gray-700"
-              >
-                Service Type
-              </label>
-              <div className="relative">
-                {/* Button for Dropdown */}
-                <button
-                  onClick={() => setServiceType(!serviceType)}
-                  className="w-full bg-white px-4 py-2 border border-gray-300 rounded-md focus:outline-none focus:ring-2 
-                     focus:ring-blue-500 focus:border-blue-500 flex items-center justify-between"
-                >
-                  <span>Select Service</span>
-                  <span
-                    className={`transition-transform ${
-                      serviceType ? "rotate-180" : "rotate-0"
-                    }`}
-                  >
-                    ▾
-                  </span>
-                </button>
+                    <tr className="">
+                      <td className="border border-gray-300 p-2 text-sm font-medium">
+                        Adult Cost
+                      </td>
+                      <td className="border border-gray-300 p-2 text-sm text-center">
+                        0
+                      </td>
+                    </tr>
+                    <tr>
+                      <td className="border border-gray-300 p-2 text-sm font-medium">
+                        Child Cost
+                      </td>
+                      <td className="border border-gray-300 p-2 text-sm text-center">
+                        0
+                      </td>
+                    </tr>
+                    <tr className="">
+                      <td className="border border-gray-300 p-2 text-sm font-medium">
+                        Infant Cost
+                      </td>
+                      <td className="border border-gray-300 p-2 text-sm text-center">
+                        0
+                      </td>
+                    </tr>
+                    <tr>
+                      <td className="border border-gray-300 p-2 text-sm font-medium">
+                        Vehicle Cost
+                      </td>
+                      <td className="border border-gray-300 p-2 text-sm text-center">
+                        0
+                      </td>
+                    </tr>
+                  </tbody>
+                </table>
 
-                {/* Dropdown List */}
-                {serviceType && (
-                  <div
-                    className="absolute mt-2 w-full bg-white border border-gray-300 rounded-md shadow-lg z-10 
-                          overflow-hidden transition-all duration-300"
+                <div className="flex flex-col gap-2 mt-4">
+                  <label
+                    htmlFor="message"
+                    className="text-sm font-medium text-gray-700"
                   >
-                    {/* Search Bar */}
+                    Your Message
+                  </label>
+                  <textarea
+                    id="message"
+                    placeholder="Type your message here..."
+                    rows="4"
+                    className="w-full p-3 border border-gray-300 rounded-lg focus:outline-none focus:ring-2 focus:ring-blue-500 focus:border-blue-500 resize-none"
+                  ></textarea>
+                </div>
+              </div>
+              <div>
+                <div className="grid grid-cols-1 gap-x-4">
+                  <h7 className="font-semibold">
+                    Departure transfer from GOA Airport to hotel on Private
+                    basis
+                  </h7>
+                  <div className="flex flex-col">
+                    <label
+                      htmlFor="lead-source"
+                      className="text-sm font-medium mb-1"
+                    >
+                      Driver
+                    </label>
+                    <select
+                      id="lead-source"
+                      className="px-3 py-2 border border-gray-300 rounded-md focus:outline-none focus:ring-2 focus:ring-blue-500 focus:border-blue-500"
+                    >
+                      <option value="" selected disabled>
+                        Open this select menu
+                      </option>
+                      <option value="1">1</option>
+                      <option value="2">2</option>
+                    </select>
+                  </div>
+
+                  <div className="flex flex-col ">
+                    <label htmlFor="name" className="text-sm font-medium mb-1">
+                      Total Adults
+                    </label>
                     <input
                       type="text"
-                      placeholder="Search..."
-                      className="w-full px-3 py-2 border-b border-gray-200 focus:outline-none focus:border-blue-500"
+                      placeholder=""
+                      id=""
+                      className="px-3 py-2 border border-gray-300 rounded-md "
                     />
-                    <ul className="max-h-48 overflow-y-auto">
-                      <li className="p-2 cursor-pointer hover:bg-blue-100 transition ">
-                        select option
-                      </li>
-                    </ul>
                   </div>
-                )}
+
+                  <div className="flex flex-col mt-3">
+                    <label htmlFor="email" className="text-sm font-medium mb-1">
+                      Per Person Adult Cost
+                    </label>
+                    <input
+                      type="text"
+                      placeholder=""
+                      id=""
+                      className="px-3 py-2 border border-gray-300 rounded-md"
+                    />
+                  </div>
+
+                  <div className="flex flex-col mt-3">
+                    <label
+                      htmlFor="mobile"
+                      className="text-sm font-medium mb-1"
+                    >
+                      Total Amount
+                    </label>
+                    <input
+                      type="text"
+                      placeholder=""
+                      id=""
+                      className="px-3 py-2 border border-gray-300 rounded-md"
+                    />
+                  </div>
+                  <div className="flex flex-col mt-3">
+                    <label
+                      htmlFor="mobile"
+                      className="text-sm font-medium mb-1"
+                    >
+                      Tax Amount
+                    </label>
+                    <input
+                      type="text"
+                      placeholder=""
+                      id=""
+                      className="px-3 py-2 border border-gray-300 rounded-md"
+                    />
+                  </div>
+                  <div className="flex flex-col mt-3">
+                    <label
+                      htmlFor="mobile"
+                      className="text-sm font-medium mb-1"
+                    >
+                      Selling Amount
+                    </label>
+                    <input
+                      type="number"
+                      placeholder=""
+                      id=""
+                      className="px-3 py-2 border border-gray-300 rounded-md"
+                    />
+                  </div>
+                  <button
+                    type="button"
+                    className="py-2 px-8 bg-blue-700 text-white rounded-md hover:bg-blue-800 mt-3 text-center"
+                  >
+                    Save
+                  </button>
+                </div>
               </div>
             </div>
-          </div>
-          
-            {/* edit table */}
-          {!quotation && <EditQuotationTable />}
-
-          <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 mt-4 gap-4">
-            <div className="flex flex-col">
-              <label htmlFor="lead-source" className="text-sm font-medium mb-1">
-                Destination*
-              </label>
-              <select
-                id="lead-source"
-                className="px-3 py-2 border border-gray-300 rounded-md focus:outline-none focus:ring-2 focus:ring-blue-500 focus:border-blue-500"
-              >
-                <option value="" selected disabled>
-                  Open this select menu
-                </option>
-                <option value="1">1</option>
-                <option value="2">2</option>
-              </select>
-            </div>
-
-            <div className="flex flex-col">
-              <label htmlFor="end-date" className="text-sm font-medium mb-1">
-                From Date *
-              </label>
-              <input
-                type="date"
-                id=""
-                className="px-3 py-2 border border-gray-300 rounded-md focus:outline-none focus:ring-2 focus:ring-blue-500 focus:border-blue-500"
-              />
-            </div>
-
-            <div className="flex flex-col">
-              <label htmlFor="end-date" className="text-sm font-medium mb-1">
-                To Date *
-              </label>
-              <input
-                type="date"
-                id=""
-                className="px-3 py-2 border border-gray-300 rounded-md focus:outline-none focus:ring-2 focus:ring-blue-500 focus:border-blue-500"
-              />
-            </div>
-            <div className="flex flex-col">
-              <button
-                type="button"
-                className="py-1 bg-slate-500 text-white rounded-md hover:bg-slate-700 mt-3 text-center"
-              >
-                Add
-              </button>
-            </div>
-            <div className="flex flex-col">
-              <label htmlFor="end-date" className="text-sm font-medium mb-1">
-                SGL Room
-              </label>
-              <input
-                type="text"
-                id=""
-                className="px-3 py-2 border border-gray-300 rounded-md focus:outline-none focus:ring-2 focus:ring-blue-500 focus:border-blue-500"
-              />
-            </div>
-            <div className="flex flex-col">
-              <label htmlFor="end-date" className="text-sm font-medium mb-1">
-                DBL Room
-              </label>
-              <input
-                type="text"
-                id=""
-                className="px-3 py-2 border border-gray-300 rounded-md focus:outline-none focus:ring-2 focus:ring-blue-500 focus:border-blue-500"
-              />
-            </div>
-            <div className="flex flex-col">
-              <label htmlFor="end-date" className="text-sm font-medium mb-1">
-                TRPL Room
-              </label>
-              <input
-                type="text"
-                id=""
-                className="px-3 py-2 border border-gray-300 rounded-md focus:outline-none focus:ring-2 focus:ring-blue-500 focus:border-blue-500"
-              />
-            </div>
-            <div className="flex flex-col">
-              <label htmlFor="end-date" className="text-sm font-medium mb-1">
-                Quad Room
-              </label>
-              <input
-                type="text"
-                id=""
-                className="px-3 py-2 border border-gray-300 rounded-md focus:outline-none focus:ring-2 focus:ring-blue-500 focus:border-blue-500"
-              />
-            </div>
-            <div className="flex flex-col">
-              <label htmlFor="end-date" className="text-sm font-medium mb-1">
-                ADULT EXT BED Room
-              </label>
-              <input
-                type="text"
-                id=""
-                className="px-3 py-2 border border-gray-300 rounded-md focus:outline-none focus:ring-2 focus:ring-blue-500 focus:border-blue-500"
-              />
-            </div>
-            <div className="flex flex-col">
-              <label htmlFor="end-date" className="text-sm font-medium mb-1">
-                CWB Room
-              </label>
-              <input
-                type="text"
-                id=""
-                className="px-3 py-2 border border-gray-300 rounded-md focus:outline-none focus:ring-2 focus:ring-blue-500 focus:border-blue-500"
-              />
-            </div>
-            <div className="flex flex-col">
-              <label htmlFor="end-date" className="text-sm font-medium mb-1">
-                CNB Room
-              </label>
-              <input
-                type="text"
-                id=""
-                className="px-3 py-2 border border-gray-300 rounded-md focus:outline-none focus:ring-2 focus:ring-blue-500 focus:border-blue-500"
-              />
-            </div>
-            <div className="flex flex-col">
-              <label htmlFor="end-date" className="text-sm font-medium mb-1">
-                INF Room
-              </label>
-              <input
-                type="text"
-                id=""
-                className="px-3 py-2 border border-gray-300 rounded-md focus:outline-none focus:ring-2 focus:ring-blue-500 focus:border-blue-500"
-              />
+            <div className="mt-4">
+              <p className="bg-cyan-100 p-2 rounded text-[12px] font-semibold">
+                Activity Supplier Guide No of Adult Adult Cost No of Child Child
+                Cost No of Infant Infant Cost Guide Cost Vehicle Cost Total Tax
+                Amt Selling Amt Remarks
+              </p>
             </div>
           </div>
-          {/* Save Button */}
-          <div className="flex items-center gap-2 justify-center">
-            <button
-              type="button"
-              className="py-1 px-2 bg-red-500 text-white rounded hover:bg-red-700 mt-3 text-center"
-              onClick={() => setIsActive(false)}
-            >
-              Cancel
-            </button>
-            <button
-              type="button"
-              className="py-1 px-2 bg-blue-700 text-white rounded hover:bg-blue-900 mt-3 text-center"
-            >
-              {quotation === true ? "Add Quotation" : "Update Quotation"}
-            </button>
-          </div>
+          <button
+          onClick={() => setIsActive(false)}
+            type="button"
+            className="p-1 px-8 bg-red-500 text-white rounded-md hover:bg-red-700 mt-3 text-center"
+          >
+            Cancel
+          </button>
         </form>
       </Dialog.Panel>
     </Dialog>
   );
 };
 
-export default EditSupplier
+export default EditSupplier;

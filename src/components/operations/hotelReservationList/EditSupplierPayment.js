@@ -10,7 +10,7 @@ const EditSupplierPayment = ({ isActive, setIsActive }) => {
       className="fixed inset-0 z-50 flex items-center justify-center bg-black bg-opacity-50"
     >
       <Dialog.Panel
-        className="bg-white p-6 rounded-lg mx-2 md:mx-0 shadow-lg w-[100%] md:w-[70%] relative h-full overflow-auto
+        className="bg-white p-6 rounded-lg mx-2 md:mx-0 shadow-lg w-[100%] md:w-[70%] relative h-[calc(100vh-100px)] overflow-auto scrollbar-thin scrollbar-thumb-headerBg scrollbar-track-gray-100 overflow-x-hidden
       "
       >
         {/* Close Button */}

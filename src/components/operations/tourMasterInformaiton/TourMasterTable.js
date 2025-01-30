@@ -1,8 +1,10 @@
 import { faStar, faUser } from "@fortawesome/free-regular-svg-icons";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
-import React from "react";
+import React, { useState } from "react";
+import EditSupplier from "./EditSupplier";
 
 const TourMasterTable = () => {
+  const [isActive, setIsActive] = useState(false)
   return (
     <div className="mt-4">
       <div className="overflow-x-auto scrollbar-thin scrollbar-thumb-headerBg scrollbar-track-gray-100">
@@ -179,7 +181,7 @@ const TourMasterTable = () => {
                 </select>
               </td>
               <td className="p-2 border border-gray-300 text-center">
-                <a href="#">
+                <a href="#" onClick={() => setIsActive(true)}>
                   <FontAwesomeIcon icon={faUser} className="text-red-700" />
                 </a>
               </td>
@@ -223,6 +225,7 @@ const TourMasterTable = () => {
           </tbody>
         </table>
       </div>
+      <EditSupplier isActive={isActive} setIsActive={setIsActive}/>
     </div>
   );
 };

@@ -141,7 +141,7 @@ function Navigation({ setIsAuthenticated, isAuthenticated }) {
                                                     Tour Master Sheet
                                                 </span>
                                             </Link>
-                                            <Link to={""} className='py-1'>
+                                            <Link to={"/edit-B2C"} className='py-1'>
                                                 <span className='px-1'>
                                                     <FontAwesomeIcon icon={faIntercom} className="text-xs text-white" />
                                                 </span>
