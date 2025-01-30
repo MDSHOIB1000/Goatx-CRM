@@ -9,7 +9,7 @@ const EditSupplier = ({ isActive, setIsActive }) => {
       onClose={() => setIsActive(false)}
       className="fixed inset-0 z-50 flex items-center justify-center bg-black bg-opacity-50"
     >
-      <Dialog.Panel className="bg-white p-6 rounded-lg mx-2 md:mx-0 shadow-lg w-[100%] md:w-[70%] relative h-[calc(100vh-100px)] overflow-auto scrollbar-thin scrollbar-thumb-gray-300 scrollbar-track-gray-100 overflow-x-hidden">
+      <Dialog.Panel className="scrollbar-thin scrollbar-thumb-headerBg scrollbar-track-gray-100 overflow-y-scroll overflow-x-hidden bg-white p-6 rounded-lg mx-2 md:mx-0 shadow-lg w-[100%] md:w-[70%] relative h-[calc(100vh-200px)] lg:h-[calc(100vh-100px)]">
         {/* Close Button */}
         <button
           className="absolute top-[-8px] right-[-8px] text-white rounded-full flex items-center justify-center z-10"

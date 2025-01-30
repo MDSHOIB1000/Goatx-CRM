@@ -15,7 +15,6 @@ module.exports = {
       },
       fontFamily: {
         roboto: ["Roboto", "sans-serif"],
-        fontFamily: ["Geologica", "serif"],
         fontOpticalSizing: ["auto"],
       },
       colors: {

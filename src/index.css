@@ -3,8 +3,19 @@
 @tailwind utilities;
 
 
-@import url('https://fonts.googleapis.com/css2?family=Geologica:wght@100..900&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Roboto:wght@100;300;400;500;600;700;900&display=swap');
+
 
 body {
-    font-family: "Geologica", "serif"
-  } 
+  font-family: "Roboto", "sans-serif";
+    font-weight:"600";
+}
+
+.ql-container.ql-snow {
+  border: none !important;
+}
+
+.quill {
+  border: rgba(211, 198, 198, 0.977) solid 1px;
+
+}

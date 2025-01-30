@@ -4,29 +4,29 @@ import ReactQuill from "react-quill";
 import AddNewAgent from "../addNewAgent/AddNewAgent";
 
 const AddQuaryInformation = () => {
-  const [openDropdown, setOpenDropdown] = useState(null); 
-  const [isOpen, setIsOpen] = useState(false); 
-  const [value, setValue] = useState(false); 
+  const [openDropdown, setOpenDropdown] = useState(null);
+  const [isOpen, setIsOpen] = useState(false);
+  const [value, setValue] = useState(false);
 
   const toggleDropdown = (dropdownId) => {
     setOpenDropdown((prev) => (prev === dropdownId ? null : dropdownId));
   };
 
-    //poppup open & close
-    const togglePopup = () => {
-      setIsOpen(!isOpen);
-    };
+  //poppup open & close
+  const togglePopup = () => {
+    setIsOpen(!isOpen);
+  };
 
 
   const modules = {
     toolbar: [
       [{ font: [] }],
       [{ header: [1, 2, 3, false] }],
-      ["bold", "italic", "underline", "strike"], 
-      [{ list: "ordered" }, { list: "bullet" }], 
+      ["bold", "italic", "underline", "strike"],
+      [{ list: "ordered" }, { list: "bullet" }],
       [{ align: [] }],
       ["link", "image", "video"],
-      ["clean"], 
+      ["clean"],
     ],
   };
 
@@ -49,15 +49,13 @@ const AddQuaryInformation = () => {
     <div className="border p-4 m-2 shadow-md rounded-sm">
       <div className="grid grid-cols-1 lg:grid-cols-2 gap-8">
         <div>
-
           <div className="flex  bg-headerBg text-white align-middle justify-between rounded-md p-2">
-
             <h2 className="text-lg font-semibold">Query Information</h2>
             <button  onClick={() => togglePopup()} className="bg-blue-500 hover:bg-blue-700 text-white font-bold py-2 px-4 rounded-full uppercase">
               Add New Agent/Client
             </button>
           </div>
-          <div className="grid grid-cols-1 md:grid-cols-2 gap-4 pt-4 border p-5 rounded-md my-3 shadow-2xl ">
+          <div className="grid grid-cols-1 md:grid-cols-2 gap-4 pt-4 border p-5 rounded-md my-3 shadow-xl ">
 
             <div className="flex flex-col">
               <label htmlFor="lead-source" className="text-sm font-medium mb-1">
@@ -241,21 +239,25 @@ const AddQuaryInformation = () => {
 
 
           </div>
-          <div className="flex gap-2">
-            <input
-              type="checkbox"
-              id=""
-              placeholder="Enter Query Title"
-              className="w-5 h-5 px-3 py-2 border border-gray-300 rounded-md focus:outline-none focus:ring-2 focus:ring-blue-500 focus:border-blue-500"
-            />
 
-            <label
-              htmlFor="quotationry-id"
-              className="text-sm font-medium mb-1"
-            >
-              Send Acknowledgement Mail
-            </label>
+          <div className="border p-2 rounded-md  shadow-xl">
+            <div className="flex gap-2">
+              <input
+                type="checkbox"
+                id=""
+                placeholder="Enter Query Title"
+                className="w-5 h-5 px-3 py-2 border border-gray-300 rounded-md focus:outline-none focus:ring-2 focus:ring-blue-500 focus:border-blue-500"
+              />
+
+              <label
+                htmlFor="quotationry-id"
+                className="text-sm font-medium mb-1"
+              >
+                Send Acknowledgement Mail
+              </label>
+            </div>
           </div>
+
 
         </div>
 
@@ -264,7 +266,7 @@ const AddQuaryInformation = () => {
           <div className=" bg-headerBg text-white align-middle justify-between rounded-md p-2">
             <h2 className="text-lg font-semibold mb-4">Other Information</h2>
           </div>
-          <div className="grid grid-cols-1 md:grid-cols-2 gap-4 pt-4 border p-5 rounded-md my-3 shadow-2xl ">
+          <div className="grid grid-cols-1 md:grid-cols-2 gap-4 pt-4 border p-5 rounded-md my-3 shadow-xl ">
             <div className="flex flex-col">
               <label htmlFor="start-date" className="text-sm font-medium mb-1">
                 Destination
@@ -450,22 +452,28 @@ const AddQuaryInformation = () => {
               </select>
             </div>
           </div>
-          <div className="flex flex-col mt-5">
-            <label htmlFor="all-company" className="text-sm font-medium mb-1">
-              Other Informations
-            </label>
-            <ReactQuill
-              theme="snow"
-              value={value}
-              onChange={setValue}
-              modules={modules}
-              formats={formats}
-              placeholder="Type your content here..."
-            />
-          </div>
         </div>
       </div>
+      <div className="p-5 rounded-md my-3 shadow-xl">
+        <div className="flex flex-col mt-5">
+          <label htmlFor="all-company" className="text-sm font-medium mb-1">
+            Other Informations
+          </label>
+          <ReactQuill
+            theme="snow"
+            value={value}
+            onChange={setValue}
+            modules={modules}
+            formats={formats}
+            placeholder="Type your content here..."
+            className="h-60  rounded-md"
+            
+          />
 
+
+        </div>
+
+      </div>
       {/* Submit Button */}
       <div className="flex justify-end gap-5 mt-6">
         <button
