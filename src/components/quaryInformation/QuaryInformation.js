@@ -14,7 +14,6 @@ const QuaryInformation = () => {
       <QuaryForm />
       <QuaryCard />
       <QuaryTable />
-      <InputField />
     </div>
   );
 };
