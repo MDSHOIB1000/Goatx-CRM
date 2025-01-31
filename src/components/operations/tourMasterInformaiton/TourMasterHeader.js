@@ -9,8 +9,8 @@ const TourMasterHeader = () => {
       <div>
         <button
           type="button"
-          className="py-[6px] px-5 bg-gradient-to-r from-blue-500 to-blue-700 text-white font-semibold 
-             rounded-md shadow-md hover:shadow-lg hover:from-blue-600 hover:to-blue-800 
+          className="py-[6px] px-5 bg-gradient-to-r from-blue-500 to-blue-800 text-white font-semibold 
+             rounded-md shadow-md hover:shadow-lg hover:from-blue-700 hover:to-blue-900 
              transition-all duration-300 flex items-center gap-2"
         >
           <FontAwesomeIcon icon={faCirclePlus} className="mr-1" />

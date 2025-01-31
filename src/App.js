@@ -11,14 +11,20 @@ import AddMeeting from "./components/meeting/AddMeeting";
 import Quary from "./Pages/quary";
 import AddQuary from "./Pages/addQuary";
 import Login from "./components/login/Login";
-import Layout from "./commonComponents/header/layout/Layout"; import DailyDutySheet from "./Pages/operations/dailyDutySheet";
+import Layout from "./commonComponents/header/layout/Layout";
+import DailyDutySheet from "./Pages/operations/dailyDutySheet";
 import HotelReservation from "./Pages/operations/hotelReservation";
 import Profilepage from "./Pages/profile";
 import Invoice from "./Pages/operations/invoice";
 import ManualInvoice from "./Pages/operations/manualInvoice";
 import Quotation from "./Pages/operations/quotation";
 import TourMasterSheet from "./Pages/operations/tourMasterSheet";
-import ProfileForm from "./components/profile/profileForm/ProfileForm";
+import VisaRequest from "./Pages/operations/visaRequest";
+import Voucher from "./Pages/operations/voucher";
+import EditVoucher from "./Pages/operations/editVoucher";
+import B2Cmaster from "./Pages/masterPages/b2Cmaster";
+import EditB2Cmaster from "./Pages/masterPages/editB2Cmaster";
+import MealPlan from "./Pages/masterPages/mealPlan";
 
 function App() {
   const [isAuthenticated, setIsAuthenticated] = useState(false);
@@ -27,18 +33,28 @@ function App() {
     <Routes>
       {!isAuthenticated ? (
         <>
-          <Route
-            path="/"
-            element={<Navigate to="login" replace />}
-          />
+          <Route path="/" element={<Navigate to="login" replace />} />
           <Route
             path="login"
-            element={<Login setIsAuthenticated={setIsAuthenticated} isAuthenticated={isAuthenticated} />}
+            element={
+              <Login
+                setIsAuthenticated={setIsAuthenticated}
+                isAuthenticated={isAuthenticated}
+              />
+            }
           />
         </>
       ) : (
         <>
-          <Route path="/" element={<Layout setIsAuthenticated={setIsAuthenticated} isAuthenticated={isAuthenticated} />}>
+          <Route
+            path="/"
+            element={
+              <Layout
+                setIsAuthenticated={setIsAuthenticated}
+                isAuthenticated={isAuthenticated}
+              />
+            }
+          >
             <Route path="/" element={<Navigate to="dashboard" replace />} />
             <Route path="profile" element={<Profilepage />} />
             <Route path="profile/edit-profile" element={<ProfileForm />} />
@@ -58,10 +74,19 @@ function App() {
             <Route path="sale/addcalls" element={<AddCalls />} />
             <Route path="sale/meeting" element={<Meeting />} />
             <Route path="sale/addmeeting" element={<AddMeeting />} />
+            <Route path={"visa-request"} element={<VisaRequest />} />
+            <Route path={"voucher"} element={<Voucher />} />
+            <Route path={"edit-voucher"} element={<EditVoucher />} />
+
+            {/* ........ Master pages start .................... */}
+            <Route path="B2C" element={<B2Cmaster />} />
+            <Route path="edit-B2C" element={<EditB2Cmaster />} />
+            <Route path="meal-plan" element={<MealPlan />} />
+
+            {/* ........ Master pages End ...................... */}
           </Route>
         </>
       )}
-
     </Routes>
   );
 }

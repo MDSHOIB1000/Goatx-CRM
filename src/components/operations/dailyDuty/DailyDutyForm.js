@@ -155,25 +155,25 @@ const DailyDutyForm = () => {
         <div className="flex items-center gap-3 justify-center">
           <button
             type="button"
-            className="py-2 px-8 bg-green-500 text-white rounded-md hover:bg-green-700 mt-3"
+           className="py-1 px-8 bg-indigo-900 text-white rounded hover:bg-headerBg mt-3"
           >
             Search
           </button>
           <button
             type="button"
-            className="py-2 px-8 bg-green-500 text-white rounded-md hover:bg-green-700 mt-3"
+           className="py-1 px-8 bg-indigo-900 text-white rounded hover:bg-headerBg mt-3"
           >
             All
           </button>
           <button
             type="button"
-            className="py-2 px-8 bg-green-500 text-white rounded-md hover:bg-green-700 mt-3"
+            className="py-1 px-8 bg-indigo-900 text-white rounded hover:bg-headerBg mt-3"
           >
             Export
           </button>
           <button
             type="button"
-            className="py-2 px-8 bg-green-500 text-white rounded-md hover:bg-green-700 mt-3"
+            className="py-1 px-8 bg-indigo-900 text-white rounded hover:bg-headerBg mt-3"
           >
             Send
           </button>

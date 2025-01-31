@@ -11,7 +11,7 @@ const QuotationForm = () => {
               </label>
               <select
                 id="lead-source"
-                className="px-3 py-2 border border-gray-300 rounded-md focus:outline-none focus:ring-2 focus:ring-blue-500 focus:border-blue-500"
+                className="px-3 py-2 border border-gray-300 rounded-md"
               >
                 <option value="" selected disabled>
                   Open this select menu
@@ -27,7 +27,7 @@ const QuotationForm = () => {
               </label>
               <select
                 id="lead-source"
-                className="px-3 py-2 border border-gray-300 rounded-md focus:outline-none focus:ring-2 focus:ring-blue-500 focus:border-blue-500"
+                className="px-3 py-2 border border-gray-300 rounded-md"
               >
                 <option value="" selected disabled>
                   Open this select menu
@@ -43,7 +43,7 @@ const QuotationForm = () => {
               </label>
               <select
                 id="lead-source"
-                className="px-3 py-2 border border-gray-300 rounded-md focus:outline-none focus:ring-2 focus:ring-blue-500 focus:border-blue-500"
+                className="px-3 py-2 border border-gray-300 rounded-md"
               >
                 <option value="" selected disabled>
                   Open this select menu
@@ -60,7 +60,7 @@ const QuotationForm = () => {
               <input
                 type="text"
                 id=""
-                className="px-3 py-2 border border-gray-300 rounded-md focus:outline-none focus:ring-2 focus:ring-blue-500 focus:border-blue-500"
+                className="px-3 py-2 border border-gray-300 rounded-md"
               />
             </div>
 
@@ -71,14 +71,14 @@ const QuotationForm = () => {
               <input
                 type="text"
                 id=""
-                className="px-3 py-2 border border-gray-300 rounded-md focus:outline-none focus:ring-2 focus:ring-blue-500 focus:border-blue-500"
+                className="px-3 py-2 border border-gray-300 rounded-md"
               />
             </div>
     
             <div className="flex items-center gap-3 justify-center">
             <button
               type="button"
-              className="py-1 px-8 bg-green-700 text-white rounded-md hover:bg-green-900 mt-3"
+              className="py-1 px-8 bg-indigo-900 text-white rounded hover:bg-headerBg mt-3"
             >
               Search
             </button>
