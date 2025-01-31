@@ -25,6 +25,7 @@ import EditVoucher from "./Pages/operations/editVoucher";
 import B2Cmaster from "./Pages/masterPages/b2Cmaster";
 import EditB2Cmaster from "./Pages/masterPages/editB2Cmaster";
 import MealPlan from "./Pages/masterPages/mealPlan";
+import   ProfileForm from "./components/profile/profileForm/ProfileForm"
 
 function App() {
   const [isAuthenticated, setIsAuthenticated] = useState(false);
