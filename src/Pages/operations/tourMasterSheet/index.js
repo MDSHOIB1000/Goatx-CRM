@@ -3,7 +3,7 @@ import TourMasterInformaiton from '../../../components/operations/tourMasterInfo
 
 const TourMasterSheet = () => {
   return (
-    <div><TourMasterInformaiton /></div>
+    <><TourMasterInformaiton /></>
   )
 }
 

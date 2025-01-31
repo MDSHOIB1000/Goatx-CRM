@@ -4,7 +4,7 @@ import DailyDutyTable from "./DailyDutyTable";
 
 const DailyDuty = () => {
   return (
-    <div className="border p-4 shadow-sm container mt-2 rounded">
+    <div className="border rounded-lg shadow p-4 m-4">
     <h2 className="bg-black p-2 text-white font-semibold text-lg">Daily Duty Sheet</h2>
         <DailyDutyForm /> 
         <DailyDutyTable />

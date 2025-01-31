@@ -5,6 +5,7 @@ import { Menu, MenuButton, MenuItem, MenuItems } from '@headlessui/react'
 import logo from "../../../assets/image/logo/gotax.png"
 import profile from "../../../assets/image/products/profile.jpg"
 import { Link, useNavigate } from 'react-router-dom'
+import { motion, AnimatePresence } from 'framer-motion';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
 import { faCircleLeft, faEnvelope, faFileExcel, faHandshake } from '@fortawesome/free-regular-svg-icons'
 import { Popover, PopoverButton, PopoverPanel } from '@headlessui/react'
@@ -75,126 +76,73 @@ function Navigation({ setIsAuthenticated, isAuthenticated }) {
                                         </span>
                                     </Link>
                                     <Popover className="relative">
-                                        <PopoverButton className="rounded-md px-3 py-2 text-sm font-medium text-gray-300 hover:bg-gray-700 hover:text-white uppercase"><span className='px-1'>
-                                            <FontAwesomeIcon icon={faRecycle} className="text-xs text-white" />
-                                        </span>
-                                            <span>
-                                                Operations
-                                            </span>
-                                        </PopoverButton>
-                                        <PopoverPanel transition anchor="bottom" className="flex flex-col bg-headerBg p-5 text-white rounded -z-1 w-[185px] transition data-closed:translate-y-1 data-closed:opacity-0 data-enter:duration-200 data-enter:ease-out data-leave:duration-150 data-leave:ease-in">
-                                            <Link to={"/daily-duty-sheet"} className='py-1'>
-                                                <span className='px-1'>
-                                                    <FontAwesomeIcon icon={faTableCells} className="text-xs text-white" />
-                                                </span>
-                                                <span>
-                                                    Daily Duty sheet
-                                                </span>
-                                            </Link>
-
-                                            <Link to={"/invoice"} className='py-1'>
-                                                <span className='px-1'>
-                                                    <FontAwesomeIcon icon={faFileInvoice} className="text-xs text-white" />
-                                                </span>
-                                                <span>
-                                                    Invoice
-                                                </span>
-                                            </Link>
-                                            <Link to={"/quotation"} className='py-1'>
-                                                <span className='px-1'>
-                                                    <FontAwesomeIcon icon={faList} className="text-xs text-white" />
-                                                </span>
-                                                <span>
-                                                    Quotation
-                                                </span>
-                                            </Link>
-                                            <Link to={""} className='py-1'>
-                                                <span className='px-1'>
-                                                    <FontAwesomeIcon icon={faFileFragment} className="text-xs text-white" />
-                                                </span>
-                                                <span>
-                                                    Visa Request
-                                                </span>
-                                            </Link>
-                                            <Link to={"hotel-reservation"} className='py-1'>
-                                                <span className='px-1'>
-                                                    <FontAwesomeIcon icon={faSquareH} className="text-xs text-white" />
-                                                </span>
-                                                <span>
-                                                    Hotel Reservation
-                                                </span>
-                                            </Link>
-
-                                            <Link to={"/manual-invoice"} className='py-1'>
-                                                <span className='px-1'>
-                                                    <FontAwesomeIcon icon={faFileInvoice} className="text-xs text-white" />
-                                                </span>
-                                                <span>
-                                                    Manual Invoice
-                                                </span>
-                                            </Link>
-                                            <Link to={"tour-master"} className='py-1'>
-                                                <span className='px-1'>
-                                                    <FontAwesomeIcon icon={faFileExcel} className="text-xs text-white" />
-                                                </span>
-                                                <span>
-                                                    Tour Master Sheet
-                                                </span>
-                                            </Link>
-                                            <Link to={"/edit-B2C"} className='py-1'>
-                                                <span className='px-1'>
-                                                    <FontAwesomeIcon icon={faIntercom} className="text-xs text-white" />
-                                                </span>
-                                                <span>
-                                                    Voucher
-                                                </span>
-                                            </Link>
-                                        </PopoverPanel>
+                                        {({ open }) => (
+                                            <>
+                                                <PopoverButton className="rounded-md px-3 py-2 text-sm font-medium text-gray-300 hover:bg-gray-700 hover:text-white uppercase">
+                                                    <FontAwesomeIcon icon={faRecycle} className="text-xs text-white px-1" />
+                                                    Operations
+                                                </PopoverButton>
+                                                <AnimatePresence>
+                                                    {open && (
+                                                        <PopoverPanel static>
+                                                            <motion.div
+                                                                initial={{ opacity: 0, y: -10 }}
+                                                                animate={{ opacity: 1, y: 0 }}
+                                                                exit={{ opacity: 0, y: -10 }}
+                                                                transition={{ duration: 0.3 }}
+                                                                className="absolute mt-4 bg-headerBg p-5 text-white rounded w-[185px] shadow-lg"
+                                                            >
+                                                                <Link to="/daily-duty-sheet" className='py-1 flex items-center'>
+                                                                    <FontAwesomeIcon icon={faTableCells} className="text-xs text-white px-2" /> Daily Duty Sheet
+                                                                </Link>
+                                                                <Link to="/invoice" className='py-1 flex items-center'>
+                                                                    <FontAwesomeIcon icon={faFileInvoice} className="text-xs text-white px-2" /> Invoice
+                                                                </Link>
+                                                                <Link to="/quotation" className='py-1 flex items-center'>
+                                                                    <FontAwesomeIcon icon={faList} className="text-xs text-white px-2" /> Quotation
+                                                                </Link>
+                                                            </motion.div>
+                                                        </PopoverPanel>
+                                                    )}
+                                                </AnimatePresence>
+                                            </>
+                                        )}
                                     </Popover>
                                     <Popover className="relative">
-                                        <PopoverButton className="rounded-md px-3 py-2 text-sm font-medium text-gray-300 hover:bg-gray-700 hover:text-white uppercase"><span className='px-1'>
-                                            <FontAwesomeIcon icon={faMoneyCheckDollar} className="text-xs text-white" />
-                                        </span>
-                                            <span>
-                                                SALE
-                                            </span>
-                                        </PopoverButton>
-                                        <PopoverPanel transition anchor="bottom" className="flex flex-col bg-headerBg p-5 text-white rounded -z-1 w-[185px]">
-                                            <Link to={""} className='py-1'>
-                                                <span className='px-1'>
-                                                    <FontAwesomeIcon icon={faSquarePollVertical} className="text-xs text-white" />
-                                                </span>
-                                                <span>
-                                                    DSR
-                                                </span>
-                                            </Link>
-
-                                            <Link to={""} className='py-1'>
-                                                <span className='px-1'>
-                                                    <FontAwesomeIcon icon={faPhoneVolume} className="text-xs text-white" />
-                                                </span>
-                                                <span>
-                                                    Call
-                                                </span>
-                                            </Link>
-                                            <Link to={""} className='py-1'>
-                                                <span className='px-1'>
-                                                    <FontAwesomeIcon icon={faHandshake} className="text-xs text-white" />
-                                                </span>
-                                                <span>
-                                                    Meeting
-                                                </span>
-                                            </Link>
-                                            <Link to={""} className='py-1'>
-                                                <span className='px-1'>
-                                                    <FontAwesomeIcon icon={faBullseye} className="text-xs text-white" />
-                                                </span>
-                                                <span>
+                                        {({ open }) => (
+                                            <>
+                                                <PopoverButton className="rounded-md px-3 py-2 text-sm font-medium text-gray-300 hover:bg-gray-700 hover:text-white uppercase">
+                                                    <FontAwesomeIcon icon={faRecycle} className="text-xs text-white px-1" />
                                                     Sale
-                                                </span>
-                                            </Link>
-
-                                        </PopoverPanel>
+                                                </PopoverButton>
+                                                <AnimatePresence>
+                                                    {open && (
+                                                        <PopoverPanel static>
+                                                            <motion.div
+                                                                initial={{ opacity: 0, y: -10 }}
+                                                                animate={{ opacity: 1, y: 0 }}
+                                                                exit={{ opacity: 0, y: -10 }}
+                                                                transition={{ duration: 0.3 }}
+                                                                className="absolute mt-4 bg-headerBg p-5 text-white rounded w-[185px] shadow-lg"
+                                                            >
+                                                                <Link to="/daily-duty-sheet" className='py-1 flex items-center'>
+                                                                    <FontAwesomeIcon icon={faTableCells} className="text-xs text-white px-2" /> DSR
+                                                                </Link>
+                                                                <Link to="/invoice" className='py-1 flex items-center'>
+                                                                    <FontAwesomeIcon icon={faFileInvoice} className="text-xs text-white px-2" /> Calls
+                                                                </Link>
+                                                                <Link to="/quotation" className='py-1 flex items-center'>
+                                                                    <FontAwesomeIcon icon={faList} className="text-xs text-white px-2" /> Meeting
+                                                                </Link>
+                                                                <Link to="/quotation" className='py-1 flex items-center'>
+                                                                    <FontAwesomeIcon icon={faList} className="text-xs text-white px-2" /> Sales
+                                                                </Link>
+                                                            </motion.div>
+                                                        </PopoverPanel>
+                                                    )}
+                                                </AnimatePresence>
+                                            </>
+                                        )}
                                     </Popover>
 
 

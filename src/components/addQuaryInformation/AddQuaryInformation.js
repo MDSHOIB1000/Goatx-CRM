@@ -46,7 +46,7 @@ const AddQuaryInformation = () => {
   ];
 
   return (
-    <div className="border p-4 m-2 shadow-md rounded-sm">
+    <div className="border rounded-lg shadow p-4 m-4">
       <div className="grid grid-cols-1 lg:grid-cols-2 gap-8">
         <div>
           <div className="flex  bg-headerBg text-white align-middle justify-between rounded-md p-2">

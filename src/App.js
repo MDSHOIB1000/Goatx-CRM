@@ -25,6 +25,7 @@ import EditVoucher from "./Pages/operations/editVoucher";
 import B2Cmaster from "./Pages/masterPages/b2Cmaster";
 import EditB2Cmaster from "./Pages/masterPages/editB2Cmaster";
 import MealPlan from "./Pages/masterPages/mealPlan";
+import   ProfileForm from "./components/profile/profileForm/ProfileForm"
 
 function App() {
   const [isAuthenticated, setIsAuthenticated] = useState(false);
@@ -57,6 +58,7 @@ function App() {
           >
             <Route path="/" element={<Navigate to="dashboard" replace />} />
             <Route path="profile" element={<Profilepage />} />
+            <Route path="profile/edit-profile" element={<ProfileForm />} />
             <Route path="dashboard" element={<Dashboard />} />
             <Route path="travel/query" element={<Quary />} />
             <Route path="travel/create-quary" element={<AddQuary />} />

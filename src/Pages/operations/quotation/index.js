@@ -3,7 +3,7 @@ import Quotationinformation from '../../../components/operations/quotationinform
 
 const Quotation = () => {
   return (
-    <div><Quotationinformation /></div>
+    <><Quotationinformation /></>
   )
 }
 

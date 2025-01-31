@@ -11,13 +11,11 @@ import CrmTable from './CrmTable';
 
 function CrmDashboard() {
   return (
-    <div className="p-4">
-      {/* QueriesList Section */}
+    <div className="border rounded-lg shadow p-4 m-4">
       <div>
         <QueriesList />
       </div>
 
-      {/* Dashboard Cards Section */}
       <div className="grid grid-cols-1 md:grid-cols-3 gap-4 mt-6">
         <div>
           <TotalSells />

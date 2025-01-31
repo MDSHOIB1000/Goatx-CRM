@@ -3,7 +3,7 @@ import ManualInvoiceInformation from '../../../components/operations/manualInvoi
 
 const ManualInvoice = () => {
   return (
-    <div><ManualInvoiceInformation /></div>
+    <><ManualInvoiceInformation /></>
   )
 }
 
