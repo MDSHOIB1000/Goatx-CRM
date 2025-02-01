@@ -3,7 +3,7 @@ import InvoiceInformation from '../../../components/operations/invoiceInformatio
 
 const Invoice = () => {
   return (
-    <div><InvoiceInformation /></div>
+    <><InvoiceInformation /></>
   )
 }
 

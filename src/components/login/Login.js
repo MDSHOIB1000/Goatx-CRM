@@ -41,20 +41,20 @@ function Login({ setIsAuthenticated, isAuthenticated }) {
     >
       <div className="grid grid-cols-2 relative">
         <div className="flex justify-around relative">
-          <div className="absolute top-44 left-52">
+          <div className="absolute top-48 left-52">
             <div
               className="text-white p-3 mix-blend-color-dodge rounded-tl-2xl rounded-br-2xl border border-white"
               style={{
                 backgroundColor: "rgba(250, 250, 250, 0.4)",
               }}
             >
-              <h1 className="text-6xl font-[900] traking-[1]">GOATX CRM</h1>
+              <h1 className="text-4xl font-[900] traking-[1]">GOAT WANDERLUST CRM</h1>
             </div>
           </div>
         </div>
         <div className="h-screen flex items-center justify-around">
           <div className="text-3xl font-bold w-1/2">
-            <div className="bg-headerBg p-4 mb-9 flex justify-center rounded-tl-2xl rounded-br-2xl border border-white">
+            <div className="bg-headerBg p-4 mb-3 flex justify-center rounded-tl-2xl rounded-br-2xl border border-white">
               <img src={logo} alt="logo-company" />
             </div>
             {!forgetPassUi ? (
@@ -71,7 +71,7 @@ function Login({ setIsAuthenticated, isAuthenticated }) {
               </>
             ) : (
               <>
-                <ForgotPassword />
+                <ForgotPassword setForgotPasswordUi={setForgotPasswordUi}/>
               </>
             )}
           </div>

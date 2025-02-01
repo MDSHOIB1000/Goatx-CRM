@@ -33,13 +33,13 @@ const ManualInvoiceForm = () => {
         <div className="flex items-center gap-3 justify-center">
         <button
           type="button"
-          className="py-1 px-8 bg-green-700 text-white rounded-md hover:bg-green-900 mt-3"
+          className="py-1 px-8 bg-indigo-900 text-white rounded hover:bg-headerBg mt-3"
         >
           Search
         </button>
         <button
           type="button"
-          className="py-1 px-8 bg-green-700 text-white rounded-md hover:bg-green-900 mt-3"
+          className="py-1 px-8 bg-indigo-900 text-white rounded hover:bg-headerBg mt-3"
         >
           All
         </button>

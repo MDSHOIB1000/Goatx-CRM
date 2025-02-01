@@ -3,7 +3,7 @@ import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
 import React from 'react'
 import { useNavigate } from 'react-router-dom'
 
-function ForgotPassword() {
+function ForgotPassword({ setForgotPasswordUi }) {
     const navigate = useNavigate()
     return (
         <>
@@ -57,7 +57,7 @@ function ForgotPassword() {
                         <button
                             type="button"
                             className="uppercase rounded-md bg-indigo-600 px-3 py-2 text-sm font-semibold text-white shadow-xs hover:bg-indigo-500 focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-indigo-600"
-                            onClick={() => navigate(`/login`)}
+                            onClick={() => setForgotPasswordUi(false)}
                         >
                             BACK TO LOGIN
                         </button>

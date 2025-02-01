@@ -47,12 +47,15 @@ function Navigation({ setIsAuthenticated, isAuthenticated }) {
                                 </svg>
                             </button>
                         </div>
-                        <div className="flex flex-1 items-center justify-center  sm:justify-start">
-                            <Link to={"/"} className="flex shrink-0 items-center">
+                        <div>
+                        <Link to={"/"} className="flex shrink-0 items-center">
                                 <img className="h-12 w-auto" src={logo} alt="Your Company" />
                             </Link>
+                        </div>
+                        <div className="flex flex-1 items-center justify-center">
+                           
                             <div className="hidden sm:ml-6 sm:block">
-                                <div className="flex space-x-4">
+                                <div className="flex justify-between">
 
                                     <Link
                                         to="#"
@@ -76,75 +79,74 @@ function Navigation({ setIsAuthenticated, isAuthenticated }) {
                                         </span>
                                     </Link>
                                     <Popover className="relative">
-                                    {({ open }) => (
-                                        <>
-                                            <PopoverButton className="rounded-md px-3 py-2 text-sm font-medium text-gray-300 hover:bg-gray-700 hover:text-white uppercase">
-                                                <FontAwesomeIcon icon={faRecycle} className="text-xs text-white px-1" />
-                                                Operations
-                                            </PopoverButton>
-                                            <AnimatePresence>
-                                                {open && (
-                                                    <PopoverPanel static>
-                                                        <motion.div
-                                                            initial={{ opacity: 0, y: -10 }}
-                                                            animate={{ opacity: 1, y: 0 }}
-                                                            exit={{ opacity: 0, y: -10 }}
-                                                            transition={{ duration: 0.3 }}
-                                                            className="absolute mt-4 bg-headerBg p-5 text-white rounded w-[185px] shadow-lg"
-                                                        >
-                                                            <Link to="/daily-duty-sheet" className='py-1 flex items-center'>
-                                                                <FontAwesomeIcon icon={faTableCells} className="text-xs text-white px-2" /> Daily Duty Sheet
-                                                            </Link>
-                                                            <Link to="/invoice" className='py-1 flex items-center'>
-                                                                <FontAwesomeIcon icon={faFileInvoice} className="text-xs text-white px-2" /> Invoice
-                                                            </Link>
-                                                            <Link to="/quotation" className='py-1 flex items-center'>
-                                                                <FontAwesomeIcon icon={faList} className="text-xs text-white px-2" /> Quotation
-                                                            </Link>
-                                                        </motion.div>
-                                                    </PopoverPanel>
-                                                )}
-                                            </AnimatePresence>
-                                        </>
-                                    )}
-                                </Popover>
-                                <Popover className="relative">
-                                    {({ open }) => (
-                                        <>
-                                            <PopoverButton className="rounded-md px-3 py-2 text-sm font-medium text-gray-300 hover:bg-gray-700 hover:text-white uppercase">
-                                                <FontAwesomeIcon icon={faRecycle} className="text-xs text-white px-1" />
-                                                Sale
-                                            </PopoverButton>
-                                            <AnimatePresence>
-                                                {open && (
-                                                    <PopoverPanel static>
-                                                        <motion.div
-                                                            initial={{ opacity: 0, y: -10 }}
-                                                            animate={{ opacity: 1, y: 0 }}
-                                                            exit={{ opacity: 0, y: -10 }}
-                                                            transition={{ duration: 0.3 }}
-                                                            className="absolute mt-4 bg-headerBg p-5 text-white rounded w-[185px] shadow-lg"
-                                                        >
-                                                            <Link to="/daily-duty-sheet" className='py-1 flex items-center'>
-                                                                <FontAwesomeIcon icon={faTableCells} className="text-xs text-white px-2" /> DSR
-                                                            </Link>
-                                                            <Link to="/invoice" className='py-1 flex items-center'>
-                                                                <FontAwesomeIcon icon={faFileInvoice} className="text-xs text-white px-2" /> Calls
-                                                            </Link>
-                                                            <Link to="/quotation" className='py-1 flex items-center'>
-                                                                <FontAwesomeIcon icon={faList} className="text-xs text-white px-2" /> Meeting
-                                                            </Link>
-                                                            <Link to="/quotation" className='py-1 flex items-center'>
-                                                                <FontAwesomeIcon icon={faList} className="text-xs text-white px-2" /> Sales
-                                                            </Link>
-                                                        </motion.div>
-                                                    </PopoverPanel>
-                                                )}
-                                            </AnimatePresence>
-                                        </>
-                                    )}
-                                </Popover>
-
+                                        {({ open }) => (
+                                            <>
+                                                <PopoverButton className="rounded-md px-3 py-2 text-sm font-medium text-gray-300 hover:bg-gray-700 hover:text-white uppercase">
+                                                    <FontAwesomeIcon icon={faRecycle} className="text-xs text-white px-1" />
+                                                    Operations
+                                                </PopoverButton>
+                                                <AnimatePresence>
+                                                    {open && (
+                                                        <PopoverPanel static>
+                                                            <motion.div
+                                                                initial={{ opacity: 0, y: -10 }}
+                                                                animate={{ opacity: 1, y: 0 }}
+                                                                exit={{ opacity: 0, y: -10 }}
+                                                                transition={{ duration: 0.3 }}
+                                                                className="absolute mt-4 bg-headerBg p-5 text-white rounded w-[185px] shadow-lg"
+                                                            >
+                                                                <Link to="/daily-duty-sheet" className='py-1 flex items-center'>
+                                                                    <FontAwesomeIcon icon={faTableCells} className="text-xs text-white px-2" /> Daily Duty Sheet
+                                                                </Link>
+                                                                <Link to="/invoice" className='py-1 flex items-center'>
+                                                                    <FontAwesomeIcon icon={faFileInvoice} className="text-xs text-white px-2" /> Invoice
+                                                                </Link>
+                                                                <Link to="/quotation" className='py-1 flex items-center'>
+                                                                    <FontAwesomeIcon icon={faList} className="text-xs text-white px-2" /> Quotation
+                                                                </Link>
+                                                            </motion.div>
+                                                        </PopoverPanel>
+                                                    )}
+                                                </AnimatePresence>
+                                            </>
+                                        )}
+                                    </Popover>
+                                    <Popover className="relative">
+                                        {({ open }) => (
+                                            <>
+                                                <PopoverButton className="rounded-md px-3 py-2 text-sm font-medium text-gray-300 hover:bg-gray-700 hover:text-white uppercase">
+                                                    <FontAwesomeIcon icon={faRecycle} className="text-xs text-white px-1" />
+                                                    Sale
+                                                </PopoverButton>
+                                                <AnimatePresence>
+                                                    {open && (
+                                                        <PopoverPanel static>
+                                                            <motion.div
+                                                                initial={{ opacity: 0, y: -10 }}
+                                                                animate={{ opacity: 1, y: 0 }}
+                                                                exit={{ opacity: 0, y: -10 }}
+                                                                transition={{ duration: 0.3 }}
+                                                                className="absolute mt-4 bg-headerBg p-5 text-white rounded w-[185px] shadow-lg"
+                                                            >
+                                                                <Link to="/sale/dsr" className='py-1 flex items-center'>
+                                                                    <FontAwesomeIcon icon={faTableCells} className="text-xs text-white px-2" /> DSR
+                                                                </Link>
+                                                                <Link to="/sale/calls" className='py-1 flex items-center'>
+                                                                    <FontAwesomeIcon icon={faFileInvoice} className="text-xs text-white px-2" /> Calls
+                                                                </Link>
+                                                                <Link to="/sale/meeting" className='py-1 flex items-center'>
+                                                                    <FontAwesomeIcon icon={faList} className="text-xs text-white px-2" /> Meeting
+                                                                </Link>
+                                                                <Link to="/" className='py-1 flex items-center'>
+                                                                    <FontAwesomeIcon icon={faList} className="text-xs text-white px-2" /> Sales
+                                                                </Link>
+                                                            </motion.div>
+                                                        </PopoverPanel>
+                                                    )}
+                                                </AnimatePresence>
+                                            </>
+                                        )}
+                                    </Popover>
 
                                     <Link to={"#"} className="rounded-md px-3 py-2 text-sm font-medium text-gray-300 hover:bg-gray-700 hover:text-white uppercase"><span className='px-1'>
                                         <FontAwesomeIcon icon={faKey} className="text-xs text-white" />

@@ -46,7 +46,7 @@ const AddQuaryInformation = () => {
   ];
 
   return (
-    <div className="border p-4 m-2 shadow-md rounded-sm">
+    <div className="border rounded-lg shadow p-4 m-4">
       <div className="grid grid-cols-1 lg:grid-cols-2 gap-8">
         <div>
           <div className="flex  bg-headerBg text-white align-middle justify-between rounded-md p-2">
@@ -478,13 +478,13 @@ const AddQuaryInformation = () => {
       <div className="flex justify-end gap-5 mt-6">
         <button
           type="button"
-          className="py-2 px-8 bg-red-700 text-white rounded-md hover:bg-red-800"
+          className="py-1 px-8 bg-red-700 text-white rounded-md hover:bg-red-800"
         >
           Cancel
         </button>
         <button
           type="button"
-          className="py-2 px-8 bg-green-700 text-white rounded-md hover:bg-green-800"
+          className="py-1 px-8 bg-indigo-900 text-white rounded hover:bg-headerBg mt-3"
         >
           Search
         </button>
